@@ -1,4 +1,4 @@
-classdef ImagesStoringMethod
+classdef ImagesStoringMethods
     % Enumeration class for images' storing methods
     
     properties (Constant)
