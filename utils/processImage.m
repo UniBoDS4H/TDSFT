@@ -1,4 +1,4 @@
-function [bw, seg] = processImage(img)
+function [cImg, bw, seg] = processImage(img)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
 % DATE: March 20, 2022
 % NAME: TDSFT (version 1.0)
@@ -41,8 +41,6 @@ try
 
     seg = getSegmentation(bw);
 
-    figure, imshow(bw, []);
-    figure, imshow(seg, []);
 catch ME 
     % Rethrow the error
     % It will be catched by the gui
