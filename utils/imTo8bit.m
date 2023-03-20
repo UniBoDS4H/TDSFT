@@ -4,12 +4,17 @@ function cImg = imTo8bit(img)
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img: the image to convert
-
+%       img: image to convert.
+%
 % OUTPUT:
-%       cImg: the converted image
+%       cImg: converted image.
+%
+% THROWS:
+%       Error if the image is not converted to 8 bit.
+% 
+% DESCRIPTION:
+%      Converts an image to 8-bit format.
 
-% TODO: check im2uint8 (the docs says it works only with uint16).
 if isa(img, ImagesStoringMethods.INT_16)
     if max(img(:)) > 2^12
         cImg  = 255.*double(img)./(2^16-1); 
@@ -26,7 +31,8 @@ end
 
 % Check if the storing method of the converted image is `uint8`
 if ~isa(cImg, ImagesStoringMethods.INT_8)
-    error('Error. \nThe image is not uint8');
+    ME = MException('imTo8bit:notConverted', 'Image not converted to 8 bit');
+    throw(ME);
 end
 
 end
