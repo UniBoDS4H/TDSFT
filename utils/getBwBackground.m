@@ -4,10 +4,12 @@ function bg = getBwBackground(img)
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img: a black and white image
+%       img: black and white image
 % OUTPUT:
-%       bg: the background of the image
+%       bg: background of the image (1 => white, 0 => black)
 %  
+% DESCRIPTION:
+%       Returns the background of a black and white image.
 
     [r, c] = size(img);
 
