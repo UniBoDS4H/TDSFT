@@ -5,7 +5,6 @@ function runStartup()
 %
 % DESCRIPTION: This function is used to add the folders of the project to the search path
 
-addpath(genpath('utils'));
-addpath(genpath('api'));
+addpath(genpath('.'));
 
 end
