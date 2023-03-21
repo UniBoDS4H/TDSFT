@@ -32,11 +32,17 @@ try
         bw = ~bw;
     end
 
+    % If there are more than one object, select the largest one
+    [~, numBlobs] = bwlabel(bw);
+    if numBlobs > 1
+        bw = bwareafilt(bw, 1);
+    end
+
     % Check line closing
-    if ~checkClosedSegmentation(bw);
+    if ~checkClosedSegmentation(bw)
+        uialert(app.UIFigure, 'Error', 'The line is not closed. \nImage discarded');
         ME = MException('checkClosedSegmentation:openedSegmentation', 'Segmentation not closed');
         throw(ME);
-        uialert(app.UIFigure, 'Error', 'The line is not closed. \nImage discarded');
     end
 
     seg = getSegmentation(bw);
