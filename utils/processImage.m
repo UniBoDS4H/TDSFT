@@ -1,11 +1,13 @@
-function [cImg, bw, seg] = processImage(img)
+function [cImg, bw, seg] = processImage(img, flag)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
 % DATE: March 20, 2022
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
 %       img: the image to convert
-
+%       flag: true if a dense object is present, false otherwise
+%             It adds more check to the segmentation to be able to recognize open lines and close dense lines.
+%
 % OUTPUT:
 %       bw: image converted to black and white
 %       seg: segmentation of the object 
@@ -39,8 +41,7 @@ try
     end
 
     % Check line closing
-    if ~checkClosedSegmentation(bw)
-        uialert(app.UIFigure, 'Error', 'The line is not closed. \nImage discarded');
+    if ~checkClosedSegmentation(bw, flag)
         ME = MException('checkClosedSegmentation:openedSegmentation', 'Segmentation not closed');
         throw(ME);
     end
