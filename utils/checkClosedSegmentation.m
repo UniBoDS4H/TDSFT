@@ -24,8 +24,6 @@ function check = checkClosedSegmentation(img, flag)
         % Check if it is an open segmentation of 1 pixel
         perim = bwperim(img);
         check = ~isequal(perim, img);
-        figure, imshow(perim, [])
-        figure, imshow(img, [])
 
         if ~check || ~flag
             return;
@@ -37,7 +35,7 @@ function check = checkClosedSegmentation(img, flag)
         fillCells = nnz(imgFill);
         perimCells = nnz(perim);
 
-        check = fillCells > 2 * perimCells
+        check = fillCells > 2 * perimCells;
     end
 
 end
