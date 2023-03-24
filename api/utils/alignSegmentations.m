@@ -13,5 +13,26 @@ function res = alignSegmentations(segmentations)
     %       Align all the segmentations.
     %
     
-        
-    end
+    first = [];
+    res = {};
+
+    for i = 1:length(segmentations)
+        seg = segmentations{i};
+        % Get the first segmentation and center it
+        if isempty(first)
+            first = seg;
+            first = centerSegmentation(first);
+            res = [res, first];  
+
+        % Else align others to the first one
+        else
+
+            [optimizer,metric] = imregconfig("multimodal");
+            tSeg = imregister(uint8(seg), uint8(first), "similarity", optimizer, metric);
+            figure, imshow(tSeg, []);
+            res = [res, tSeg];
+    
+        end
+    end    
+
+end
