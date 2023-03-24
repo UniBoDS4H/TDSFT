@@ -9,8 +9,14 @@ function [cImg, bw, seg] = processImage(img, flag)
 %             It adds more check to the segmentation to be able to recognize open lines and close dense lines.
 %
 % OUTPUT:
+%       cImg: image converted to 8 bit
 %       bw: image converted to black and white
 %       seg: segmentation of the object 
+%
+% DESCRIPTION:
+%       - Converts the image to 8 bit
+%       - Convertes the image to black white
+%       - Get the segmentation (perimeter) of the object contained in the image.
 
 % Check the channels of the image
 % If the image has more than one channel but is not an rgb image, use only the first one
