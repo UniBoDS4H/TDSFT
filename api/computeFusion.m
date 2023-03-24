@@ -12,9 +12,8 @@ function res = computeFusion(segmentations, algorithm)
 %
 % DESCRIPTION:
 %       Fuse the segmentations using the specified algorithm.
-
     alignedSegmentations = alignSegmentations(segmentations);
-
-    fun = str2func(algorithm);
+    algorithmName = getAlgorithmFullName(algorithm);
+    fun = str2func(algorithmName);
     res = fun(alignedSegmentations);
 end
