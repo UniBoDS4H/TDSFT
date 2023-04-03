@@ -14,6 +14,9 @@ function res = algorithm_getLargestSegmentation(segmentations)
 %
 
     % initialize the overlap
+
+    disp('Getting the largest segmentation...');
+
     first = segmentations{1};
     [m,n] = size(first);
     overlap = zeros(m, n, 'uint8');
@@ -28,6 +31,6 @@ function res = algorithm_getLargestSegmentation(segmentations)
     overlap = uint8(~overlap);
 
     % fill the resulting segmentation and get the perimeter
-    % fillOverlap = imfill(overlap, 'holes');
+    fillOverlap = imfill(overlap, 'holes');
     res = bwperim(fillOverlap);
 end
