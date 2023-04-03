@@ -1,4 +1,4 @@
-function [cImg, bw, seg] = processImage(img, flag)
+function [bw, seg] = processImage(img, flag)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
 % DATE: March 20, 2022
 % NAME: TDSFT (version 1.0)
@@ -9,7 +9,6 @@ function [cImg, bw, seg] = processImage(img, flag)
 %             It adds more check to the segmentation to be able to recognize open lines and close dense lines.
 %
 % OUTPUT:
-%       cImg: image converted to 8 bit
 %       bw: image converted to black and white
 %       seg: segmentation of the object 
 %
