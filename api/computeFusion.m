@@ -8,11 +8,10 @@ function res = computeFusion(segmentations, algorithm)
 %       algorithm: the algorithm to be used for the fusion process.
 %
 % OUTPUT:
-%       res: the result of the fusion process
+%       res: the result of the fusion process.
 %
 % DESCRIPTION:
 %       Fuse the segmentations using the specified algorithm.
-    alignedSegmentations = alignSegmentations(segmentations);
     algorithmName = getAlgorithmFullName(algorithm);
     fun = str2func(algorithmName);
     res = fun(alignedSegmentations);
