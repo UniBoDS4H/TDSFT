@@ -20,6 +20,6 @@ seg = bwperim(imgFill);
 
 % TODO: get the internal perimeter
 % extSeg = bwperim(imgFill);
-% seg = bwperim(imgFill) - extSeg;
+% seg = bw perim(imgFill) - extSeg;
 
 end

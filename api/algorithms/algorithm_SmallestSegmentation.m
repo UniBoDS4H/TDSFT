@@ -1,4 +1,4 @@
-function res = algorithm_getLargestSegmentation(segmentations) 
+function res = algorithm_LargestSegmentation(segmentations) 
     % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
     % DATE: March 29, 2022
     % NAME: TDSFT (version 1.0)
