@@ -1,27 +1,32 @@
-function [bw, seg] = processImage(img, flag)
+function [bw, seg, wrn] = processImage(img, dense, internal)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 20, 2022
+% DATE: April 8, 2022
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
 %       img: the image to convert
-%       flag: true if a dense object is present, false otherwise
+%       dense: true if a dense object is present, false otherwise
 %             It adds more check to the segmentation to be able to recognize open lines and close dense lines.
+%       internal: if true, the internal line is required (when segmentation of more than one pixel).
 %
 % OUTPUT:
 %       bw: image converted to black and white
 %       seg: segmentation of the object 
+%       wrn: true if the input image had more than one channel but was not an rgb image: used only the first channel
 %
 % DESCRIPTION:
 %       - Converts the image to 8 bit
 %       - Convertes the image to black white
 %       - Get the segmentation (perimeter) of the object contained in the image.
+%       - CANNOT BE TRUE BOTH DENSE AND INTERNAL, if the object is dense there is no internal line.
 
 % Check the channels of the image
-% If the image has more than one channel but is not an rgb image, use only the first one
+% If the image has more than one channel but is not an rgb image, use only the first channel
 if size(img,3) ~= 1 && size(img,3) ~= 3
     img = img(:,:,1);
-    waitfor( warndlg("Used only the first channel of the image") ); % Wait until ok is pressed
+    wrn = true;
+else
+    wrn = false;
 end
 
 try
@@ -46,13 +51,25 @@ try
     end
 
     % Check line closing
-    if ~checkClosedSegmentation(bw, flag)
+    if ~checkClosedSegmentation(bw, dense)
         ME = MException('checkClosedSegmentation:openedSegmentation', 'Segmentation not closed');
         throw(ME);
     end
 
-    seg = getSegmentation(bw);
+    % Check if the segmentation is empty
+    if ~sum(bw(:))
+        ME = MException('processImage:emptySegmentation', 'Segmentation empty');
+        throw(ME);
+    end
 
+    % Check if the segmentation is already a single pixel 
+    if isequal(bw, bwperim(bw))
+        seg = bw;
+        return; 
+    end
+
+    seg = getOnePixelSegmentation(bw, internal);
+    
 catch ME 
     % Rethrow the error
     % It will be catched by the gui
