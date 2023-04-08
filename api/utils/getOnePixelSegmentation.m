@@ -1,6 +1,6 @@
-function segLine = getSegmentation(seg, internal)
+function opSeg = getOnePixelSegmentation(seg, internal)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 20, 2022
+% DATE: April 8, 2022
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
@@ -15,14 +15,17 @@ function segLine = getSegmentation(seg, internal)
 
 % Fill the holes 
 segFill = imfill(seg, 'holes');
+
 % Get the internal perimeter
 if internal
-    disp("ciao");
     extSeg = bwperim(segFill);
-    segLine = bwperim(seg) - extSeg;
+    opSeg = bwperim(seg) - extSeg;
+
 % Get the external perimeter
 else
-    segLine = bwperim(segFill);
+    opSeg = bwperim(segFill);
+end
+
 end
 
 

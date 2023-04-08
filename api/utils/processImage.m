@@ -1,6 +1,6 @@
 function [bw, seg, wrn] = processImage(img, dense, internal)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 20, 2022
+% DATE: April 8, 2022
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
@@ -56,7 +56,19 @@ try
         throw(ME);
     end
 
-    seg = getSegmentation(bw, internal);
+    % Check if the segmentation is empty
+    if ~sum(bw(:))
+        ME = MException('processImage:emptySegmentation', 'Segmentation empty');
+        throw(ME);
+    end
+
+    % Check if the segmentation is already a single pixel 
+    if isequal(bw, bwperim(bw))
+        seg = bw;
+        return; 
+    end
+
+    seg = getOnePixelSegmentation(bw, internal);
     
 catch ME 
     % Rethrow the error
