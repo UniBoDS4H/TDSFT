@@ -16,30 +16,27 @@ function res = algorithm_LargestSegmentation(segmentations)
     
     disp('Getting the smallest segmentation...');
 
+    if isempty(segmentations)
+        ME = MException('smallestSegmentation:emptyInput', 'Segmentations array empty');
+        throw(ME);
+        return;
+    end
 
-    % initialize the overlap
-    first = segmentations{1};
-    [m,n] = size(first);
-    overlap = zeros(m, n, 'uint8');
+    if length(segmentations) == 1
+        res = segmentations{1};
+        return;
+    end
+
+    filledSegmentations = [];
 
     % overlap all the segmentations
     for i=1:length(segmentations)
-        seg = uint8(segmentations{i});
-        segFill = imfill(seg, 'holes');
-        overlap = overlap + segFill;
-    end 
-
-    % select the common parts
-    for i = 1:m
-        for j = 1:n
-            if overlap(i,j) == size(segmentations, 2)
-                overlap(i,j) = 1;
-            else
-                overlap(i,j) = 0;
-            end
-        end
+        filledSegmentations{i} = imfill(segmentations{i}, 'holes');
     end
 
-    % get the perimeter
-    res = bwperim(overlap);
+    % overlap the segmentations
+    overlap = overlapSegmentations(filledSegmentations);
+
+    nSeg = size(segmentations, 2);
+    [res, ~] = getCommonArea(overlap, nSeg);
 end

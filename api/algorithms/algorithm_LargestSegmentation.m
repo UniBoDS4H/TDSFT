@@ -17,15 +17,25 @@ function res = algorithm_LargestSegmentation(segmentations)
 
     disp('Getting the largest segmentation...');
 
-    first = segmentations{1};
-    [m,n] = size(first);
-    overlap = zeros(m, n, 'uint8');
+    if isempty(segmentations)
+        ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
+        throw(ME);
+        return;
+    end
+
+    if length(segmentations) == 1
+        res = segmentations{1};
+        return;
+    end
+
+    invertedSegmentations = [];
 
     % overlap all the segmentations
     for i=1:length(segmentations)
-        seg = uint8(~segmentations{i});
-        overlap = overlap + seg;
-    end 
+        invertedSegmentations{i} = uint8(~segmentations{i});
+    end
+
+    overlap = overlapSegmentations(invertedSegmentations);
 
     overlap = imbinarize(overlap);
     overlap = uint8(~overlap);
