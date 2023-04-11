@@ -7,7 +7,7 @@ function res = algorithm_LargestSegmentation(segmentations)
     %       segmentations: the aligned segmentations to be fused together 
     %
     % OUTPUT:
-    %       res: the resulting segmentation
+    %       res: the smallest segmentation
     %
     % DESCRIPTION:
     %       Fuse all the segmentations together overlapping them and getting the smallest segmentation possible.
@@ -37,6 +37,6 @@ function res = algorithm_LargestSegmentation(segmentations)
     % overlap the segmentations
     overlap = overlapSegmentations(filledSegmentations);
 
-    nSeg = size(segmentations, 2);
-    [res, ~] = getCommonArea(overlap, nSeg);
+    nSeg = length(segmentations);
+    res = getSmallestSegmentation(overlap, nSeg);
 end

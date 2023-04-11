@@ -37,10 +37,5 @@ function res = algorithm_LargestSegmentation(segmentations)
 
     overlap = overlapSegmentations(invertedSegmentations);
 
-    overlap = imbinarize(overlap);
-    overlap = uint8(~overlap);
-
-    % fill the resulting segmentation and get the perimeter
-    fillOverlap = imfill(overlap, 'holes');
-    res = bwperim(fillOverlap);
+    res = getLargestSegmentation(overlap);
 end
