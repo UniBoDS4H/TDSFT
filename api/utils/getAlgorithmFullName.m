@@ -1,16 +1,20 @@
 function fullName = getAlgorithmFullName(algorithm)
-% AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 24, 2022
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+% DATE: April 12, 2023
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       algorithm: algorithm name.
+%       algorithm (string):
+%           algorithm name.
 %
 % OUTPUT:
-%       fullName: fullName of the algorithm.
+%       fullName (string):
+%           fullName of the algorithm.
 % DESCRIPTION:
 %       Get the full name of the specified algorithm.
 %       FullName: 'algorithm_' + algorithmName.
+%       Fullname is needed in the standalone version to recognize algorithm files.
+%       Example: 'algorithm_' + 'TDSFT' = 'algorithm_TDSFT'.
 
     fullName = strcat('algorithm_', algorithm);
 end
