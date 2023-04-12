@@ -1,20 +1,24 @@
-function check = checkClosedSegmentation(img, flag)
-% AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 17, 2022
+function check = isSegmentationClosed(img, flag)
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+% DATE: April 12, 2023
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img: black and white image
-%       flag: true if a dense object is present, false otherwise
-%             It adds more check to the segmentation to be able to recognize open lines and close dense lines.
+%       img (Matrix [height, width]):
+%           black and white image.
+%
+%       flag (boolean):
+%           true if a dense object is present and you want more tests, false otherwise.
+%           It adds more check to the segmentation to be able to recognize open lines and close dense lines.
 %
 % OUTPUT:
-%       true => Line closed 
-%       false => Line opened
+%       check:
+%           true (1) => Line closed 
+%           false (0) => Line opened
 %
 % DESCRIPTION:
-%       Checks if the segmentation is closed or not.
-% 
+%       Checks if the segmentation is closed or not. Returns true if it is closed
+
 
     imgFill = imfill(img,'holes');
     dif1 = imgFill - img;

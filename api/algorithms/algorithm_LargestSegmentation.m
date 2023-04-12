@@ -1,41 +1,41 @@
-function res = algorithm_LargestSegmentation(segmentations) 
-% AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: March 24, 2022
-% NAME: TDSFT (version 1.0)
-%
-% PARAMETERS:
-%       segmentations: the aligned segmentations to be fused together 
-%
-% OUTPUT:
-%       res: the resulting segmentation
-%
-% DESCRIPTION:
-%       Fuse all the segmentations together overlapping them and getting the largest possible segmentation which contains all the inputs.
-%
-
-    % initialize the overlap
+function largestSegmentation = algorithm_LargestSegmentation(segmentations) 
+    % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+    % DATE: April 12, 2023
+    % NAME: TDSFT (version 1.0)
+    %
+    % PARAMETERS:
+    %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+    %           the segmentations to fuse.
+    %
+    % THROWS:
+    %       largestSegmentations:emptyInput (Exception):
+    %           throwed if the input is empty.
+    %
+    % OUTPUT:
+    %       largestSegmentation (Matrix [height, width]):
+    %           the largest segmentation.
+    %
+    % DESCRIPTION:
+    %       Fuse all the segmentations together overlapping them and getting the largest possible segmentation.
+    %       The largest segmentation is the smallest segmentation possible which contains each input segmentation.
+    %       To obtain it the segmentations are overlapped and then is returned the perimeter of the area covered by them.
 
     disp('Getting the largest segmentation...');
 
+    % Check if the input is empty
     if isempty(segmentations)
         ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
         throw(ME);
         return;
     end
 
+    % If there is only one segmentation, return it
     if length(segmentations) == 1
-        res = segmentations{1};
+        largestSegmentation = segmentations{1};
         return;
     end
 
-    invertedSegmentations = [];
-
-    % overlap all the segmentations
-    for i=1:length(segmentations)
-        invertedSegmentations{i} = uint8(~segmentations{i});
-    end
-
-    overlap = overlapSegmentations(invertedSegmentations);
-
-    res = getLargestSegmentation(overlap);
+    % get the largest segmentation
+    overlap = overlapSegmentations(segmentations);
+    largestSegmentation = getLargestSegmentation(overlap);
 end
