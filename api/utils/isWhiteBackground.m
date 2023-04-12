@@ -16,10 +16,10 @@ function check = isWhiteBackground(img)
 
         [h, w] = size(img);
 
-        b1 = sum( img(1, :) );
-        b2 = sum( img(h, :) );
-        b3 = sum( img(:, 1) );
-        b4 = sum( img(:, w) );
+        firstRow = sum( img(1, :) );
+        lastRow = sum( img(h, :) );
+        firstCol = sum( img(:, 1) );
+        lastCol = sum( img(:, w) );
 
-        check = b1 && b2 && b3 && b4;
+        check = firstRow || lastRow || firstCol || lastCol;
 end
