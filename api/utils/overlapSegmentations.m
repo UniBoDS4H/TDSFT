@@ -1,32 +1,38 @@
 function overlap = overlapSegmentations(segmentations) 
-    % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-    % DATE: April 11, 2022
+    % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+    % DATE: April 12, 2023
     % NAME: TDSFT (version 1.0)
     %
     % PARAMETERS:
-    %       segmentations: the segmentations to overlap 
+    %       segmentations (Cell array: [1, nSeg] (Cells: matrix [height, width]):
+    %           the segmentations to overlap.
     %
     % OUTPUT:
-    %       overlap: the overlapped segmentations
+    %       overlap (Matrix [height, width]):
+    %           the overlapped segmentations.
+    %
+    % THROWS:
+    %       overlapSegmentations:emptyInput (Exception):
+    %           throwed if the input is empty.
     %
     % DESCRIPTION:
-    %       Overlap the segmentations in the input array and return the resulting matrix.  
+    %       Overlap (sum) the input segmentations and return the resulting matrix.  
     
-
+    % check if the input is empty
     if isempty(segmentations)
         ME = MException('overlapSegmentations:emptyInput', 'Segmentations array empty');
         throw(ME);
         return;
     end
 
+    % if there is only one segmentation, return it
     if length(segmentations) == 1
         res = segmentations{1};
         return;
     end
 
     % initialize the overlap
-    first = segmentations{1};
-    [m,n] = size(first);
+    [m,n] = size(segmentations{1});
     overlap = zeros(m, n, 'uint8');
 
     % overlap all the segmentations
