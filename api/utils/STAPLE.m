@@ -4,7 +4,7 @@
 % Function:  [W, p, q] = STAPLE(D)
 % Parameter: D, data matrix of segmentations, dimensions VOXELS x RATERS
 % Returns:   W, est. weight matrix for each voxel
-%            p, est. vector of sensitivities for each expertTODO
+%            p, est. vector of sensitivities for each expert
 %            q, est. vector of specificities for each expert
 %
 % You can simply threshold the resulting matrix W to get an estimated ground truth segmentation,
@@ -91,6 +91,5 @@ function [W, p, q] = STAPLE(D)
         % M-Step
         p = (W * D) / sum(W(:)); % W * D = sum(W(D))
         q = ((1 -  W) * ~D) / sum(1 - W(:)); 
-        
     end
 end
