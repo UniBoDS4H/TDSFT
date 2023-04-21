@@ -1,11 +1,17 @@
 function largestSegmentation = algorithm_LargestSegmentation(segmentations) 
     % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-    % DATE: April 12, 2023
+    % DATE: April 20, 2023
     % NAME: TDSFT (version 1.0)
     %
     % PARAMETERS:
-    %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-    %           the segmentations to fuse.
+    %       The function accepts two different input parameters:
+    %
+    %       1) segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+    %           the cell array containing the segmentations to fuse.
+    %
+    %       2) segmentations (Matrix [height, width]):
+    %           the segmentations are already overlapped in a matrix.
+    %           To overlap the segmentations must NOT be filled (the algorithm need NO dense segmentations).
     %
     % THROWS:
     %       largestSegmentations:emptyInput (Exception):
@@ -22,20 +28,25 @@ function largestSegmentation = algorithm_LargestSegmentation(segmentations)
 
     disp('Getting the largest segmentation...');
 
-    % Check if the input is empty
-    if isempty(segmentations)
-        ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
-    end
+    if iscell(segmentations)
 
-    % If there is only one segmentation, return it
-    if length(segmentations) == 1
-        largestSegmentation = segmentations{1};
-        return;
-    end
+        % Check if the input is empty
+        if isempty(segmentations)
+            ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
+            throw(ME);
+            return;
+        end
 
-    % get the largest segmentation
-    overlap = overlapSegmentations(segmentations);
+        % If there is only one segmentation, return it
+        if length(segmentations) == 1
+            largestSegmentation = segmentations{1};
+            return;
+        end
+
+        % get the largest segmentation
+        overlap = overlapSegmentations(segmentations);
+    else 
+        overlap = segmentations;
+    end
     largestSegmentation = getLargestSegmentation(overlap);
 end

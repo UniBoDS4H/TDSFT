@@ -8,11 +8,20 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     %           segmentations to fuse.
     %
     %       algorithm:
-    %           method to use for the last two segmentations left if the segmentations are even.
+    %           algorithm to use for the last two segmentations left if the segmentations are even.
+    %           Available algorithms: 
+    %               - 'LargestSegmentation'
+    %               - 'SmallestSegmentation'
     %
     % THROWS:
     %       middleSegmentations:emptyInput (Exception):
     %           throwed if the input is empty.
+    %
+    %       middleSegmentations:wrongInputs (Exception):
+    %           throwed if the number of segmentations is even and the algorithm is not specified.
+    %
+    %       middleSegmentations:algorithmNotAvailable (Exception):
+    %           throwed if the algorithm choosed if the number of segmentations is even is not available.
     %
     % OUTPUT:
     %       middleSegmentation (Matrix [height, width])):
@@ -29,6 +38,13 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     % check if the input is empty
     if isempty(segmentations)
         ME = MException('middleSegmentation:emptyInput', 'Segmentations array empty');
+        throw(ME);
+        return;
+    end
+
+    % check if the number of segmentations is even and the algorithm is specified
+    if mod(length(segmentations), 2) == 0 && nargin < 2
+        ME = MException('middleSegmentation:wrongInputs', 'If the number of segmentations is even, the algorithm must be specified');
         throw(ME);
         return;
     end
@@ -67,6 +83,24 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
         nSeg = nSeg - 2;
     end
 
-    middleSegmentation = imbinarize(overlap);
+    % compute result
+    if isequal(nSeg, 2)
+        % if the number of segmentations is even, use the specified algorithm for the last two segmentations left
+        algorithm = fromSpacedToFullName(algorithm);
+        try
+            if strcmp(algorithm, 'algorithm_LargestSegmentation')
+                middleSegmentation = getLargestSegmentation(overlap);
+            elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
+                middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
+            else
+                throw 'Algorithm not available';
+            end
+        catch ME
+            rethrow(ME);
+        end
+    else
+        % if the number of segmentations is odd, return the segmentation left
+        middleSegmentation = imbinarize(overlap);
+    end
 
 end
