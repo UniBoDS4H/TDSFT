@@ -1,0 +1,206 @@
+{
+    "inputs": [
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        },
+        {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }, {
+            "name": "algorithm",
+            "type": "DropDown",
+            "value": [
+                "Smallest Segmentation",
+                "Largest Segmentation"
+            ],
+            "optional": false
+        }
+    ]
+}

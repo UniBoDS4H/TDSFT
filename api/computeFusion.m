@@ -1,4 +1,4 @@
-function resSeg = computeFusion(segmentations, algorithm)
+function resSeg = computeFusion(segmentations, algorithm, varargin)
     % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
     % DATE: April 12, 2023
     % NAME: TDSFT (version 1.0)
@@ -16,8 +16,16 @@ function resSeg = computeFusion(segmentations, algorithm)
     % DESCRIPTION:
     %       Fuse the segmentations using the specified algorithm.
 
-    % Firstly, get the algorithm fullname
-    algorithmName = getAlgorithmFullName(algorithm);
-    fun = str2func(algorithmName);
-    resSeg = fun(segmentations);
+    try        
+        fun = str2func(algorithm);
+        if nargin > 2
+            resSeg = fun(segmentations, varargin);
+        else
+            resSeg = fun(segmentations);
+        end
+    
+    %Error is handled by the caller
+    catch ME
+        rethrow(ME);
+    end
 end
