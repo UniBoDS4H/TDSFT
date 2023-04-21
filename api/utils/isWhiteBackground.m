@@ -14,12 +14,12 @@ function check = isWhiteBackground(img)
     % DESCRIPTION:
     %       Returns the background of a black and white image.
 
-        [r, c] = size(img);
+        [h, w] = size(img);
 
-        b1 = img(1, round(c/2));
-        b2 = img(r, round(c/2));
-        b3 = img(round(r/2), 1);
-        b4 = img(round(r/2), c);
+        firstRow = sum( img(1, :) );
+        lastRow = sum( img(h, :) );
+        firstCol = sum( img(:, 1) );
+        lastCol = sum( img(:, w) );
 
-        check = b1 && b2 && b3 && b4;
+        check = firstRow || lastRow || firstCol || lastCol;
 end
