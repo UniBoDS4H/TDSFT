@@ -4,12 +4,19 @@
 %
 % DESCRIPTION: Enumeration class for images' storing methods.
 classdef ImagesStoringMethods
-    
-    properties (Constant)
-        INT_8 = 'uint8'
-        INT_16 = 'uint16'
-        INT_32 = 'uint32'
-        INT_64 = 'uint64'
+    properties
+        type
+    end
+    methods
+        function storing_method = ImagesStoringMethods(m)
+            storing_method.type = m;
+        end
+    end
+    enumeration
+        INT_8 ('uint8')
+        INT_16 ('uint16')
+        INT_32 ('uint32')
+        INT_64 ('uint64')
     end
 
 end
