@@ -43,7 +43,8 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
         end
 
         % If there is only one segmentation, return it
-        if length(segmentations) == 1
+        nSeg = length(segmentations);
+        if nSeg == 1
             smallestSegmentation = segmentations{1};
             return;
         end
@@ -55,8 +56,6 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
         end
         overlap = overlapSegmentations(filledSegmentations);
 
-        % get the smallest segmentation
-        nSeg = length(segmentations);
     elseif varargin == 2
         overlap = varargin{1};
         nSeg = varargin{2}; 
