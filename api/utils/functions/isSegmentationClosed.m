@@ -1,4 +1,3 @@
-function check = isSegmentationClosed(img, flag)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
 % DATE: April 12, 2023
 % NAME: TDSFT (version 1.0)
@@ -17,9 +16,8 @@ function check = isSegmentationClosed(img, flag)
 %           false (0) => Line opened
 %
 % DESCRIPTION:
-%       Checks if the segmentation is closed or not. Returns true if it is closed
-
-
+%       Checks if the segmentation is closed or not. Returns true if it is closed.
+function check = isSegmentationClosed(img, flag)
     imgFill = imfill(img,'holes');
     dif1 = imgFill - img;
     if sum(sum(dif1)) ~= 0

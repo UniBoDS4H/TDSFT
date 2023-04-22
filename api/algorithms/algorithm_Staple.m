@@ -1,29 +1,28 @@
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+% DATE: April 12, 2023
+% NAME: TDSFT (version 1.0)
+%
+% PARAMETERS:
+%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%           segmentations to fuse.
+%
+% OUTPUT:
+%       gtSegmentation (Matrix [height, width]):
+%           the ground truth segmentation computed with STAPLE algorithm.
+%
+% THROWS:
+%       staple:emptyInput (Exception):
+%           throwed if the input is empty.
+%
+% DESCRIPTION:
+%       Use STAPLE algorithm to get the ground truth segmentation.
+%
+% REFERENCES:
+%        Warfield, Simon K., Kelly H. Zou, and William M. Wells. 
+%        "Simultaneous truth and performance level estimation (STAPLE): 
+%        an algorithm for the validation of image segmentation." 
+%        Medical Imaging, IEEE Transactions on 23.7 (2004): 903-921.
 function gtSegmentation = algorithm_Staple(segmentations)
-    % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-    % DATE: April 12, 2023
-    % NAME: TDSFT (version 1.0)
-    %
-    % PARAMETERS:
-    %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-    %           segmentations to fuse.
-    %
-    % OUTPUT:
-    %       gtSegmentation (Matrix [height, width]):
-    %           the ground truth segmentation computed with STAPLE algorithm.
-    %
-    % THROWS:
-    %       staple:emptyInput (Exception):
-    %           throwed if the input is empty.
-    %
-    % DESCRIPTION:
-    %       Use STAPLE algorithm to get the ground truth segmentation.
-    %
-    % REFERENCES:
-    %        Warfield, Simon K., Kelly H. Zou, and William M. Wells. 
-    %        "Simultaneous truth and performance level estimation (STAPLE): 
-    %        an algorithm for the validation of image segmentation." 
-    %        Medical Imaging, IEEE Transactions on 23.7 (2004): 903-921.
-
     disp('Executing STAPLE...');
 
     % check if the input is empty

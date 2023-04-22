@@ -1,4 +1,3 @@
-function result = fromCamelCaseToSpacedString(s)
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
 % DATE: April 18, 2023
 % NAME: TDSFT (version 1.0)
@@ -14,6 +13,6 @@ function result = fromCamelCaseToSpacedString(s)
 %       Convert from camelcase string to spaced string.
 %       CamelCase: ThisIsTheExampleString.
 %       Spaced: This Is The Example String.
-
-result = regexprep(s, '([a-z])([A-Z])', '$1 $2');
+function result = fromCamelCaseToSpacedString(s)
+    result = regexprep(s, '([a-z])([A-Z])', '$1 $2');
 end

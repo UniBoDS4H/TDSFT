@@ -1,23 +1,22 @@
-function res = algorithm_LocalMapStaple(segmentations, mainSegmentation)
-    % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-    % DATE: April 22, 2023
-    % NAME: TDSFT (version 1.0)
-    %
-    % PARAMETERS:
-    %    segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-    %       The array where each element is a segmentation. 
-    %    mainSegmentation (int):
-    %       The index of the segmentation to be used as main segmentation.
-    %
-    % OUTPUT:
-    %   TODO       
-    %
-    % THROWS:
-    %   TODO
-    %
-    % DESCRIPTION:
-
-
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+% DATE: April 22, 2023
+% NAME: TDSFT (version 1.0)
+%
+% PARAMETERS:
+%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%           The array where each element is a segmentation. 
+%       mainSegmentation (int):
+%           The index of the segmentation to be used as main segmentation.
+%
+% OUTPUT:
+%   TODO       
+%
+% THROWS:
+%   TODO
+%
+% DESCRIPTION:
+%   TODO
+function res = algorithm_Interpolation(segmentations, mainSegmentation)
     % Check if the input is empty
     if isempty(segmentations)
         ME = MException('interpolateSegmentations:emptyInput', 'Segmentations array empty');
