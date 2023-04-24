@@ -10,7 +10,11 @@
 %
 % OUTPUT:
 %       averageSeg (matrix [height, width]):
-%           The average segmentation.       
+%           The average segmentation.
+%
+% THROWS:
+%       averageTargetFromInput:invalidIndex (Exception):
+%           The start segmentation index is greater than the number of segmentations.
 %
 % DESCRIPTION:
 %       The average segmentation is computed by averaging the segmentations as follows:
@@ -22,7 +26,10 @@ function averageSeg = algorithm_AverageTargetFromInput(segmentations, startSegme
     disp('Averaging...');
     
     try
-        averageSeg = segmentations{startSegmentation};
+        if startSegmentation{1} > length(segmentations)
+            throw(MException('averageTargetFromInput:invalidIndex', 'The start segmentation index is greater than the number of segmentations.'));
+        end
+        averageSeg = getAverageSegmentation(segmentations, startSegmentation{1});
     catch ME
         rethrow(ME);
     end

@@ -1,0 +1,9 @@
+{
+    "inputs": [
+        {
+            "name": "Target Segmentation Index",
+            "type": "InputSegmentationsSelector",
+            "optional": false
+        }
+    ]
+}
