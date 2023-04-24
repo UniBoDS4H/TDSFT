@@ -4,7 +4,7 @@
 %
 % PARAMETERS:
 %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%           segmentations to fuse.
+%           array containing the segmentations to fuse.
 %
 %       algorithm:
 %           algorithm to use for the last two segmentations left if the segmentations are even.

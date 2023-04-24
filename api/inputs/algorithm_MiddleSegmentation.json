@@ -1,11 +1,11 @@
 {
     "inputs": [
         {
-            "name": "algorithm",
+            "name": "Algorithm",
             "type": "DropDown",
             "value": [
-                "Smallest Segmentation",
-                "Largest Segmentation"
+                "Largest Segmentation",
+                "Smallest Segmentation"
             ],
             "optional": false
         }

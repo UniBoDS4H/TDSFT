@@ -7,7 +7,7 @@
 %
 %       1 param) 
 %           segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%               The array where each element is a segmentation.
+%               array containing the segmentations to fuse.
 %       2 param):
 %           overlap (Matrix [height, width]):
 %               the overlap of the segmentations (the segmentations are already overlapped).

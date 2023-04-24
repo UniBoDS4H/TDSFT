@@ -7,8 +7,8 @@
 %           the points used to compute the centroid
 %
 % OUTPUT:
-%       x: the x coordinate of the centroid
-%       y: the y coordinate of the centroid
+%       row: the row (y coordinate) of the centroid
+%       col: the col (x coordinate) of the centroid
 %
 % THROWS:
 %       MException('getCentroid:emptyPoints', 'The points array is empty'):
@@ -19,24 +19,25 @@
 %       If the number of points is 1, the centroid is the point itself.
 %       If the number of points is 2, the centroid is the middle point.
 %       If the number of points is >= 3, use the centroid matlab built-in function.
-function [x, y] = getCentroid(points) 
+function [row, col] = getCentroid(points)
     if length(points) == 0
         throw (MException('getCentroid:emptyPoints', 'The points array is empty'));
     end
+
+    % Remove duplicates
+    points = unique(points, 'rows');
     
-    if length(points) == 1
-        x = points(1, 1);
-        y = points(1, 2);
-        return;
-    end
-
+    if size(points, 1) == 1
+        row = points(1, 1);
+        col = points(1, 2);
     % not using (a+b)/2 because it could overflow
-    if size(points, 1) == 2
-        x = points(1, 1) + ( points(2, 1) - points(1, 1)) / 2;
-        y = points(1, 2) + ( points(2, 2)- points(1, 2)) / 2;
-        return;
+    elseif size(points, 1) == 2
+        row = points(1, 1) + ( points(2, 1) - points(1, 1)) / 2;
+        col = points(1, 2) + ( points(2, 2)- points(1, 2)) / 2;
+    else
+        pgon = polyshape(points);
+        [row, col] = centroid(pgon);
     end
-
-    pgon = polyshape(points);
-    [x, y] = centroid(pgon);
+    row = round(row);
+    col = round(col);
 end

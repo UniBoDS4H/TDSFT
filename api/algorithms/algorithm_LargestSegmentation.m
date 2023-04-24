@@ -6,7 +6,7 @@
 %       The function accepts two different input parameters:
 %
 %       1) segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%           the cell array containing the segmentations to fuse.
+%           array containing the segmentations to fuse.
 %
 %       2) segmentations (Matrix [height, width]):
 %           the segmentations are already overlapped in a matrix.
