@@ -4,7 +4,7 @@
 %
 % PARAMETERS:
 %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%           segmentations to fuse.
+%           array containing the segmentations to fuse.
 %
 % OUTPUT:
 %       gtSegmentation (Matrix [height, width]):
@@ -22,7 +22,7 @@
 %        "Simultaneous truth and performance level estimation (STAPLE): 
 %        an algorithm for the validation of image segmentation." 
 %        Medical Imaging, IEEE Transactions on 23.7 (2004): 903-921.
-function gtSegmentation = algorithm_Staple(segmentations)
+function gtSegmentation = algorithm_STAPLE(segmentations)
     disp('Executing STAPLE...');
 
     % check if the input is empty
