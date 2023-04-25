@@ -3,7 +3,6 @@
         {
             "name": "Target Segmentation Index",
             "type": "InputSegmentationsSelector",
-            "optional": false,
             "help": "The segmentation to be used as the target for the algorithm."
         }
     ]
