@@ -7,29 +7,34 @@
                 "Value 1",
                 "Value 2"
             ],
-            "optional": false
+            "optional": false,
+            "help": "This is a help text for the dropdown"
         },
         {
             "name": "Test Check",
             "type": "Check",
-            "optional": false
+            "optional": false,
+            "help": "This is a help text for the check"
         }, 
         {
             "name": "Test Text",
             "type": "Text",
-            "optional": false
+            "optional": false,
+            "help": "This is a help text for the text"
         },
         {
             "name": "Target Segmentation Index",
             "type": "InputSegmentationsSelector",
-            "optional": false
+            "optional": false,
+            "help": "This is a help text for the text"
         },
         {
             "name": "Test Numeric Text",
             "type": "Number",
             "value": 1,
             "limits": [1, 5],
-            "optional": false
+            "optional": false,
+            "help": "This is a help text for the text"
         }
     ]
 }
