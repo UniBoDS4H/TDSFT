@@ -1,38 +1,37 @@
-function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algorithm) 
-    % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-    % DATE: April 12, 2023
-    % NAME: TDSFT (version 1.0)
-    %
-    % PARAMETERS:
-    %       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-    %           segmentations to fuse.
-    %
-    %       algorithm:
-    %           algorithm to use for the last two segmentations left if the segmentations are even.
-    %           Available algorithms: 
-    %               - 'LargestSegmentation'
-    %               - 'SmallestSegmentation'
-    %
-    % THROWS:
-    %       middleSegmentations:emptyInput (Exception):
-    %           throwed if the input is empty.
-    %
-    %       middleSegmentations:wrongInputs (Exception):
-    %           throwed if the number of segmentations is even and the algorithm is not specified.
-    %
-    %       middleSegmentations:algorithmNotAvailable (Exception):
-    %           throwed if the algorithm choosed if the number of segmentations is even is not available.
-    %
-    % OUTPUT:
-    %       middleSegmentation (Matrix [height, width])):
-    %           the middle segmentation.
-    %
-    % DESCRIPTION:
-    %       Get the middle segmentation.
-    %       Discard outliers until the middle segmentation is reached. To do that iterate over the segmentations and
-    %       discard the largest and the smallest segmentation at each iteration.
-    %       If the number of segmentations is even specify a method for the last two segmentations left.
-    
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
+% DATE: April 12, 2023
+% NAME: TDSFT (version 1.0)
+%
+% PARAMETERS:
+%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%           array containing the segmentations to fuse.
+%
+%       algorithm:
+%           algorithm to use for the last two segmentations left if the segmentations are even.
+%           Available algorithms: 
+%               - 'LargestSegmentation'
+%               - 'SmallestSegmentation'
+%
+% THROWS:
+%       middleSegmentations:emptyInput (Exception):
+%           throwed if the input is empty.
+%
+%       middleSegmentations:wrongInputs (Exception):
+%           throwed if the number of segmentations is even and the algorithm is not specified.
+%
+%       middleSegmentations:algorithmNotAvailable (Exception):
+%           throwed if the algorithm choosed if the number of segmentations is even is not available.
+%
+% OUTPUT:
+%       middleSegmentation (Matrix [height, width])):
+%           the middle segmentation.
+%
+% DESCRIPTION:
+%       Get the middle segmentation.
+%       Discard outliers until the middle segmentation is reached. To do that iterate over the segmentations and
+%       discard the largest and the smallest segmentation at each iteration.
+%       If the number of segmentations is even specify a method for the last two segmentations left.
+function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algorithm)     
     disp('Getting the middle segmentation...');
 
     % check if the input is empty
