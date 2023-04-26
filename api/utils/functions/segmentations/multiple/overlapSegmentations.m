@@ -31,8 +31,8 @@ function overlap = overlapSegmentations(segmentations)
     end
 
     % initialize the overlap
-    [m,n] = size(segmentations{1});
-    overlap = zeros(m, n, 'uint8');
+    [height, width] = size(segmentations{1});
+    overlap = zeros(height, width, 'uint8');
 
     % overlap all the segmentations
     for i=1:length(segmentations)
