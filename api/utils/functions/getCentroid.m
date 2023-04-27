@@ -1,9 +1,9 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: April 20, 2022
+% DATE: April 20, 2023
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       points (one-dimensional array of pairs of integers:
+%       points (one-dimensional array of pairs of integers, [numPoints, 2]):
 %           the points used to compute the centroid
 %
 % OUTPUT:
@@ -32,11 +32,16 @@ function [row, col] = getCentroid(points)
         col = points(1, 2);
     % not using (a+b)/2 because it could overflow
     elseif size(points, 1) == 2
-        row = points(1, 1) + ( points(2, 1) - points(1, 1)) / 2;
-        col = points(1, 2) + ( points(2, 2)- points(1, 2)) / 2;
+        [row, col] = getMiddlePoint(points);
     else
-        pgon = polyshape(points);
-        [row, col] = centroid(pgon);
+        pgon = polyshape(points, 'KeepCollinearPoints', true);
+
+        % Check if the points are collinear
+        if isequal(area(pgon), 0)
+            [row, col] = getMiddlePoint(points);
+        else    
+            [row, col] = centroid(pgon);
+        end
     end
     row = round(row);
     col = round(col);

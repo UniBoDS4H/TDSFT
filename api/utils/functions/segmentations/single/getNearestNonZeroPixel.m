@@ -1,5 +1,5 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
-% DATE: April 23, 2022
+% DATE: April 23, 2023
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
@@ -27,6 +27,13 @@ function [row, col] = getNearestNonZeroPixel(segmentation, startRow, startCol, v
     
     if startRow < 1 || startRow > height || startCol < 1 || startCol > width
         throw(MException('getNearestPixelWithValue:invalidIndex', 'Pixel index out of bounds'));
+    end
+
+    % If the pixel is already non-zero, return it
+    if segmentation(startRow, startCol) ~= 0
+        row = startRow;
+        col = startCol;
+        return;
     end
 
     [~, nearestPixelArray] = bwdist(segmentation);

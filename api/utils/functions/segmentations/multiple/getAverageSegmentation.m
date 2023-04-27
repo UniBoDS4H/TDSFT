@@ -69,8 +69,11 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
                     end
                     nearestPixels = zeros(arrayLength, 2);
 
+                    idx = 1;
+
                     % Add the pixel of the main segmentation to the array
-                    nearestPixels(1, :) = [i, j];
+                    nearestPixels(idx, :) = [i, j];
+                    idx = idx + 1;
 
                     for k = 1:nSeg
                         % If the segmentation is the start segmentation, skip it
@@ -79,11 +82,11 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
                         end
                         % The index of the array is the index of the segmentation + 1 because the first
                         % element is the main segmentation pixel 
-                        nearestPixels(k + 1, :) = getNearestNonZeroPixel(segmentations{k}, i, j);
+                        nearestPixels(idx, :) = getNearestNonZeroPixel(segmentations{k}, i, j);
+                        idx = idx + 1;
                     end
-                    
                     % Get the centroid of the points
-                    [row, col] = getCentroid(nearestPixels);
+                    [row, col] = getCentroid(nearestPixels);    
                         
                     % Set the pixel to 1
                     averageSeg(row, col) = 1;
