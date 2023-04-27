@@ -19,6 +19,7 @@
 %       The average segmentation is obtained by taking the 1-pixel line in the middle of
 %       the area between the two segmentations.
 function averageSeg = algorithm_AverageSmallestLargest(segmentations)
+    disp('Getting the average segmentation between the smallest and the largest...');
 
     % Check if the input is empty, if it is the case throw an exception
     if isempty(segmentations)
