@@ -36,16 +36,12 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
 
     % check if the input is empty
     if isempty(segmentations)
-        ME = MException('middleSegmentation:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
     end
 
     % check if the number of segmentations is even and the algorithm is specified
     if mod(length(segmentations), 2) == 0 && nargin < 2
-        ME = MException('middleSegmentation:wrongInputs', 'If the number of segmentations is even, the algorithm must be specified');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'If the number of segmentations is even, the algorithm must be specified'));
     end
 
     % if there is only one segmentation, return it
@@ -54,7 +50,11 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
         return;
     end
 
-    overlap = overlapSegmentations(segmentations);
+    try
+        overlap = overlapSegmentations(segmentations);
+    catch ME
+        rethrow(ME);
+    end
 
     nSeg = length(segmentations); % number of segmentations
     totIt = floor( (nSeg - 1) / 2 ); % total number of iterations
@@ -64,7 +64,12 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     for i=1:length(segmentations)
         filledSegmentations{i} = imfill(segmentations{i}, 'holes');
     end
-    overlapFilled = overlapSegmentations(filledSegmentations);
+
+    try
+        overlapFilled = overlapSegmentations(filledSegmentations);
+    catch
+        rethrow(ME);
+    end
 
     % At each iteration discard the largest and the smallest segmentation
     for i=1:totIt
@@ -92,7 +97,7 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
             elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
                 middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
             else
-                throw 'Algorithm not available';
+                throw(MException('TDSFT:algorithms', 'Algorithm not available'));
             end
         catch ME
             rethrow(ME);

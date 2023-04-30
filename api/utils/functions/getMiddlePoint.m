@@ -21,7 +21,7 @@
 function [x, y] = getMiddlePoint(points)
    
     if length(points) < 2
-        throw MException('Segmentation:InvalidPoints', 'Insert at least 2 points');
+        throw(MException('TDSFT:algorithms', 'Insert at least 2 points'));
     end
 
     % If there are more than 2 points search for the extreme points

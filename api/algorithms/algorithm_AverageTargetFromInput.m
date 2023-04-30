@@ -28,7 +28,7 @@ function averageSeg = algorithm_AverageTargetFromInput(segmentations, startSegme
     
     try
         if startSegmentation{1} > length(segmentations)
-            throw(MException('averageTargetFromInput:invalidIndex', 'The start segmentation index is greater than the number of segmentations.'));
+            throw(MException('TDSFT:algorithms', 'The start segmentation index is greater than the number of segmentations.'));
         end
         averageSeg = getAverageSegmentation(segmentations, startSegmentation{1});
     catch ME

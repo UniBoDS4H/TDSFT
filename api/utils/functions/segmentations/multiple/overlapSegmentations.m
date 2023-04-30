@@ -19,9 +19,7 @@
 function overlap = overlapSegmentations(segmentations)     
     % check if the input is empty
     if isempty(segmentations)
-        ME = MException('overlapSegmentations:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
     end
 
     % if there is only one segmentation, return it

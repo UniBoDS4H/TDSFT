@@ -70,14 +70,12 @@ function [bw, seg, wrn] = processImage(img, dense, internal, middle)
 
         % Check line closing
         if ~isSegmentationClosed(bw, dense)
-            ME = MException('processImage:openedSegmentation', 'Segmentation not closed');
-            throw(ME);
+            throw(MException('TDSFT:processImage', 'Not closed segmentation uploaded'));
         end
 
         % Check if the segmentation is empty
         if ~sum(bw(:))
-            ME = MException('processImage:emptySegmentation', 'Segmentation empty');
-            throw(ME);
+            throw(MException('TDSFT:processImage', 'Empty segmentation uploaded'));
         end
 
         % Check if the segmentation is already single pixel 

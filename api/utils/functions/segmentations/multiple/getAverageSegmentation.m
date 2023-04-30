@@ -28,9 +28,7 @@
 %       - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = getAverageSegmentation(segmentations, startSegmentation) 
     if isempty(segmentations)
-        ME = MException('interpolateSegmentations:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
     end
 
     nSeg = length(segmentations);

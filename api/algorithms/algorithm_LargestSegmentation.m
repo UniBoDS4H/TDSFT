@@ -31,9 +31,7 @@ function largestSegmentation = algorithm_LargestSegmentation(segmentations)
 
         % Check if the input is empty
         if isempty(segmentations)
-            ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
-            throw(ME);
-            return;
+            throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
         end
 
         % If there is only one segmentation, return it
@@ -42,8 +40,12 @@ function largestSegmentation = algorithm_LargestSegmentation(segmentations)
             return;
         end
 
-        % get the largest segmentation
-        overlap = overlapSegmentations(segmentations);
+        try
+            % get the largest segmentation
+            overlap = overlapSegmentations(segmentations);
+        catch ME
+            rethrow(ME);
+        end
     else 
         overlap = segmentations;
     end

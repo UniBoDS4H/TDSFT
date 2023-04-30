@@ -33,7 +33,6 @@ function cImg = imTo8bit(img)
     % check if the storing method of the converted image is `uint8`
     % else throws an error
     if ~isa(cImg, ImagesStoringMethods.INT_8.type)
-        ME = MException('imTo8bit:notConverted', 'Image not converted to 8 bit');
-        throw(ME);
+        throw(MException('TDSFT:processImage', 'Image not converted to 8 bit'));
     end
 end

@@ -36,9 +36,7 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
 
         % Check if the input is empty
         if isempty(segmentations)
-            ME = MException('smallestSegmentation:emptyInput', 'Segmentations array empty');
-            throw(ME);
-            return;
+            throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
         end
 
         % If there is only one segmentation, return it
@@ -53,15 +51,18 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
         for i=1:length(segmentations)
             filledSegmentations{i} = imfill(segmentations{i}, 'holes');
         end
-        overlap = overlapSegmentations(filledSegmentations);
+
+        try
+            overlap = overlapSegmentations(filledSegmentations);
+        catch ME
+            rethrow(ME);
+        end
 
     elseif varargin == 2
         overlap = varargin{1};
         nSeg = varargin{2}; 
     else
-        ME = MException('smallestSegmentation:wrongInput', 'Wrong number of input arguments');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Wrong number of input arguments'));
     end
 
     smallestSegmentation = getSmallestSegmentation(overlap, nSeg);

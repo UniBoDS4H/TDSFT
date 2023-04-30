@@ -21,7 +21,7 @@
 %       If the number of points is >= 3, use the centroid matlab built-in function.
 function [row, col] = getCentroid(points)
     if length(points) == 0
-        throw (MException('getCentroid:emptyPoints', 'The points array is empty'));
+        throw (MException('TDSFT:algorithms', 'The points array is empty'));
     end
 
     % Remove duplicates
