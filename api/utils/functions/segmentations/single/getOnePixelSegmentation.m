@@ -6,7 +6,9 @@
 %       seg (Matrix [height, width]):
 %           black and white segmentation.
 %       internal (boolean):
-%           if true (1), is used the internal line (when the segmentation is of more than one pixel).    
+%           if true (1), is used the internal line (when the segmentation is of more than one pixel). 
+%       middle (boolean):
+%           if true (1), is used the middle line (when the segmentation is of more than one pixel). 
 %
 % OUTPUT:
 %       opSeg (Matrix [height, width]):
@@ -15,7 +17,7 @@
 % DESCRIPTION:
 %       Gets the one-pixel segmentation. Often the line of the segmentation is not one pixel, but more.
 %       If the segmentation is of more than one pixel, it is possible to get the internal or external line.
-function opSeg = getOnePixelSegmentation(seg, internal)
+function opSeg = getOnePixelSegmentation(seg, internal, middle)
     % Fill the holes 
     segFill = imfill(seg, 'holes');
 
@@ -23,6 +25,12 @@ function opSeg = getOnePixelSegmentation(seg, internal)
     if internal
         extSeg = bwperim(segFill);
         opSeg = bwperim(seg) - extSeg;
+
+    % Get the middle perimeter
+    elseif middle
+        opSeg = bwskel(seg);
+        opSeg = imfill(opSeg, 'holes');
+        opSeg = bwperim(opSeg);
 
     % Get the external perimeter
     else
