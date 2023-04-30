@@ -5,7 +5,6 @@
 % PARAMETERS:
 %       img (Matrix [height, width]):
 %           black and white image.
-%
 %       flag (boolean):
 %           true if a dense object is present and you want more tests, false otherwise.
 %           It adds more check to the segmentation to be able to recognize open lines and close dense lines.

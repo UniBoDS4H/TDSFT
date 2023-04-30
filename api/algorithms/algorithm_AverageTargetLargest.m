@@ -17,7 +17,7 @@
 %       - if the segmentations are 2, the average pixel is the middle point between the two pixels;
 %       - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = algorithm_AverageTargetLargest(segmentations)
-    disp('Averaging with largest...');
+    disp('Getting average segmentation by averaging with the largest segmentation...');
     
     try
         largest = algorithm_LargestSegmentation(segmentations);

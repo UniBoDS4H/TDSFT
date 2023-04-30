@@ -5,13 +5,13 @@
 % PARAMETERS:
 %       img (Matrix [height, width]):
 %           the image to convert.
-%
-%       dense (booelan):
+%       dense (boolean):
 %           true (1) if a dense object is present and more test are wanted/neeeded, false (0) otherwise.
 %           It adds more check to the segmentation to be able to recognize open lines and close dense lines.
-%
 %       internal (boolean):
 %           if true (1), the internal line is required (when segmentation of more than one pixel).
+%       middle (boolean):
+%           if true (1), the middle line is required (when segmentation of more than one pixel).
 %
 % OUTPUT:
 %       bw (Matrix [height, width]):
@@ -34,8 +34,10 @@
 %       - Convertes the image to black white;
 %       - Get the segmentation (perimeter) of the object contained in the image;
 %
-%       - CANNOT BE TRUE BOTH DENSE AND INTERNAL, if the object is dense there is no internal line.
-function [bw, seg, wrn] = processImage(img, dense, internal)
+%       - CANNOT BE TRUE BOTH DENSE AND INTERNAL (or MIDDLE), if the object is dense there is no internal line.
+%       - CANNOT BE TRUE BOTH INTERNAL AND MIDDLE, only one option for the segmentation of more than one pixel is allowed.
+%       The default option for line segmentation is the external line.
+function [bw, seg, wrn] = processImage(img, dense, internal, middle)
     % Check the channels of the image
     % If the image has more than one channel but is not an rgb image, use only the first channel
     if size(img,3) ~= 1 && size(img,3) ~= 3
@@ -84,7 +86,7 @@ function [bw, seg, wrn] = processImage(img, dense, internal)
             return; 
         end
 
-        seg = getOnePixelSegmentation(bw, internal);
+        seg = getOnePixelSegmentation(bw, internal, middle);
         
     catch ME 
         % Rethrow the error
