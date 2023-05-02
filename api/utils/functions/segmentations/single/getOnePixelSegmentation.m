@@ -22,7 +22,7 @@
 %       Gets the one-pixel segmentation. Often the line of the segmentation is not one pixel, but more.
 %       If the segmentation is of more than one pixel, it is possible to get the external, internal or middle line.
 %       The external line is the default one.
-%       Cannot be used both internal and middle line.
+%       ATTENTION: Cannot be used both internal and middle line.
 function opSeg = getOnePixelSegmentation(seg, internal, middle)
     % Check the input
     if internal && middle

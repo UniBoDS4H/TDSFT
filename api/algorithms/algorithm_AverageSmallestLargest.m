@@ -28,7 +28,7 @@ function averageSeg = algorithm_AverageSmallestLargest(segmentations)
 
     % If there is only one segmentation, return it
     if length(segmentations) == 1
-        largestSegmentation = segmentations{1};
+        averageSeg = segmentations{1};
         return;
     end
 

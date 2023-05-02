@@ -59,15 +59,17 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     nSeg = length(segmentations); % number of segmentations
     totIt = floor( (nSeg - 1) / 2 ); % total number of iterations
 
+    % preallocate the filled segmentations array
+    filledSegmentations = cell(1, length(segmentations));
+
     % Get the filled segmentations needed to get the smallest segmentation      
-    filledSegmentations = [];
     for i=1:length(segmentations)
         filledSegmentations{i} = imfill(segmentations{i}, 'holes');
     end
 
     try
         overlapFilled = overlapSegmentations(filledSegmentations);
-    catch
+    catch ME
         rethrow(ME);
     end
 

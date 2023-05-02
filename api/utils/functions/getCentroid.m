@@ -20,7 +20,7 @@
 %       If the number of points is 2, the centroid is the middle point.
 %       If the number of points is >= 3, use the centroid matlab built-in function.
 function [row, col] = getCentroid(points)
-    if length(points) == 0
+    if isempty(points)
         throw (MException("TDSFT:algorithms", "The points array is empty"));
     end
 

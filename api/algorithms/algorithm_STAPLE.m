@@ -38,13 +38,18 @@ function gtSegmentation = algorithm_STAPLE(segmentations)
 
     % convert to the right format for STAPLE
     % See STAPLE file for more details
-    stapleParam = [];
+
+    % get segmentations dimensions
+    [height, width] = size(segmentations{1});
+    nSeg = length(segmentations);
+
+    % preallocate the array
+    stapleParam = zeros(height*width, nSeg);
     for i=1:length(segmentations)
         seg = segmentations{i};
-        stapleParam = [stapleParam, seg(:)];
+        stapleParam(:, i) = seg(:);
     end
-    
-    [W, p, q] = STAPLE(stapleParam);
+    [W, ~, ~] = STAPLE(stapleParam);
 
     % get segmentations dimensions
     imageDims = size(segmentations{1});

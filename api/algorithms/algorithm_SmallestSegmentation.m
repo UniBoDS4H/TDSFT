@@ -46,8 +46,10 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
             return;
         end
         
+        % preallocate the filledSegmentations array
+        filledSegmentations = cell(1, nSeg);
+
         % overlap the filled segmentations
-        filledSegmentations = [];
         for i=1:length(segmentations)
             filledSegmentations{i} = imfill(segmentations{i}, 'holes');
         end

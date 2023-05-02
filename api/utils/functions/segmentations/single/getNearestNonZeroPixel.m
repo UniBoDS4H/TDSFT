@@ -22,7 +22,7 @@
 %
 % DESCRIPTION:
 %       Get the nearest non-zero pixel from the given pixel index.
-function [row, col] = getNearestNonZeroPixel(segmentation, startRow, startCol, val)     
+function [row, col] = getNearestNonZeroPixel(segmentation, startRow, startCol)     
     [height, width] = size(segmentation);
     
     if startRow < 1 || startRow > height || startCol < 1 || startCol > width

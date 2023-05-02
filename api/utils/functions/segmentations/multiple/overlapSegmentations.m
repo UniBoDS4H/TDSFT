@@ -24,7 +24,7 @@ function overlap = overlapSegmentations(segmentations)
 
     % if there is only one segmentation, return it
     if length(segmentations) == 1
-        res = segmentations{1};
+        overlap = segmentations{1};
         return;
     end
 

@@ -35,7 +35,7 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
     
     % If there is only one segmentation, return it
     if nSeg == 1
-        smallestSegmentation = segmentations{1};
+        averageSeg = segmentations{1};
         return;
     end
 
