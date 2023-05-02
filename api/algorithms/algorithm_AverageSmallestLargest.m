@@ -3,21 +3,21 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
-%           array containing the segmentations to fuse.
+%   segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
+%     array containing the segmentations to fuse.
 %
 % OUTPUT:
-%       averageSeg (matrix [height, width]):
-%           The average segmentation.
+%   averageSeg (matrix [height, width]):
+%     The average segmentation.
 %
 % THROWS:
-%      TDSFT:algorithms:
-%           if the input is empty.
+%   TDSFT:algorithms:
+%     if the input is empty.
 %
 % DESCRIPTION:
-%       Get the average segmentation between the smallest and the largest.
-%       The average segmentation is obtained by taking the 1-pixel line in the middle of
-%       the area between the two segmentations.
+%   Get the average segmentation between the smallest and the largest.
+%   The average segmentation is obtained by taking the 1-pixel line in the middle of
+%   the area between the two segmentations.
 function averageSeg = algorithm_AverageSmallestLargest(segmentations)
     disp('Getting the average segmentation between the smallest and the largest...');
 

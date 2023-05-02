@@ -3,16 +3,16 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img (Matrix [height, width]):
-%           image to convert.
+%   img (Matrix [height, width]):
+%     image to convert.
 %
 % OUTPUT:
-%       cImg (Matrix [height, width]):
-%           converted image.
+%   cImg (Matrix [height, width]):
+%     converted image.
 %
 % THROWS:
-%       TDSFT:processImage:
-%           if the image is not converted to 8 bit.
+%   TDSFT:processImage:
+%     if the image is not converted to 8 bit.
 % 
 % DESCRIPTION:
 %      Converts an image to 8-bit format.

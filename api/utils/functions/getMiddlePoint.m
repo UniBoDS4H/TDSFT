@@ -3,21 +3,23 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       points (one-dimensional array of pairs of integers, [numPoints, 2]):
-%           the collinear points from which the middle point is computed
+%   points (one-dimensional array of pairs of integers, [numPoints, 2]):
+%     the collinear points from which the middle point is computed
 %
 % OUTPUT:
-%       row: the row (y coordinate) of the middle point
-%       col: the col (x coordinate) of the middle point
+%   row:
+%     the row (y coordinate) of the middle point
+%   col:
+%     the col (x coordinate) of the middle point
 %
 % THROWS:
-%       TDSFT:algorithms:
-%           if the points array is empty
+%   TDSFT:algorithms:
+%     if the points array is empty
 %
 % DESCRIPTION:
-%       Get the middle point of a set of collinear points.
-%       If there are more than 2 points, the middle point is computed as the 
-%       middle point between the two extreme points. 
+%   Get the middle point of a set of collinear points.
+%   If there are more than 2 points, the middle point is computed as the 
+%   middle point between the two extreme points. 
 function [x, y] = getMiddlePoint(points)
    
     if length(points) < 2

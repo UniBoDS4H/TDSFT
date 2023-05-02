@@ -3,22 +3,24 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       points (one-dimensional array of pairs of integers, [numPoints, 2]):
-%           the points used to compute the centroid
+%   points (one-dimensional array of pairs of integers, [numPoints, 2]):
+%     the points used to compute the centroid
 %
 % OUTPUT:
-%       row: the row (y coordinate) of the centroid
-%       col: the col (x coordinate) of the centroid
+%   row (int): 
+%     the row (y coordinate) of the centroid
+%   col (int):
+%     the col (x coordinate) of the centroid
 %
 % THROWS:
-%       TDSFT:algorithms:
-%           if the points array is empty
+%   TDSFT:algorithms:
+%     if the points array is empty
 %
 % DESCRIPTION:
-%       Get the centroid of a set of points.
-%       If the number of points is 1, the centroid is the point itself.
-%       If the number of points is 2, the centroid is the middle point.
-%       If the number of points is >= 3, use the centroid matlab built-in function.
+%   Get the centroid of a set of points.
+%   If the number of points is 1, the centroid is the point itself.
+%   If the number of points is 2, the centroid is the middle point.
+%   If the number of points is >= 3, use the centroid matlab built-in function.
 function [row, col] = getCentroid(points)
     if isempty(points)
         throw (MException("TDSFT:algorithms", "The points array is empty"));

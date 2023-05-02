@@ -3,22 +3,24 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentation (Matrix [height, width]):
-%           the segmentation where to find the nearest non-zero pixel
-%       startRow (int):
-%           the row (y coordinate) of the pixel from which to start the search
-%       startCol (int):
-%           the col (x coordinate) of the pixel from which to start the search
+%   segmentation (Matrix [height, width]):
+%     the segmentation where to find the nearest non-zero pixel.
+%   startRow (int):
+%     the row (y coordinate) of the pixel from which to start the search.
+%   startCol (int):
+%     the col (x coordinate) of the pixel from which to start the search.
 %
 % OUTPUT:
-%       row: the row (x coordinate) of the nearest non-zero pixel
-%       col: the col (y coordinate) of the nearest non-zero pixel
+%   row (int):
+%     the row (x coordinate) of the nearest non-zero pixel.
+%   col (int):
+%     the col (y coordinate) of the nearest non-zero pixel.
 %
 % THROWS:
 %       TDSFT:algorithms:
-%           if the pixel index is out of bounds
+%           if the pixel index is out of bounds.
 %       TDSFT:algorithms:
-%           if no non-zero pixel is found
+%           if no non-zero pixel is found.
 %
 % DESCRIPTION:
 %       Get the nearest non-zero pixel from the given pixel index.

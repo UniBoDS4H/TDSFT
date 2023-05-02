@@ -9,10 +9,10 @@
 % OUTPUT:
 %       result (string):
 %           the camel case string.
+%
 % DESCRIPTION:
-%       Convert from spaced string to camelcase string.
-%       Spaced: This Is The Example String.
-%       CamelCase: ThisIsTheExampleString.
+%   Convert from spaced string to camelcase string.
+%   Example: 'This Is The Example String' = 'ThisIsTheExampleString'.
 function result = fromSpacedStringToCamelCase(s)
     result = regexprep(s, "([a-z]) ([A-Z])", "$1$2");
 end

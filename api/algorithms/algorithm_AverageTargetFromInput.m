@@ -4,19 +4,19 @@
 %
 % PARAMETERS:
 %   segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
-%       array containing the segmentations to fuse.
+%     array containing the segmentations to fuse.
 %   startSegmentation (int):
-%       the index of the segmentation to be used as main segmentation.
+%     the index of the segmentation to be used as main segmentation.
 %
 % OUTPUT:
 %   averageSeg (matrix [height, width]):
-%       the average segmentation.
+%     the average segmentation.
 %
 % THROWS:
 %   TDSFT:algorithms:
-%       the segmentations array is empty.
+%     the segmentations array is empty.
 %   TDSFT:algorithms:
-%       the start segmentation index is greater than the number of segmentations.
+%     the start segmentation index is greater than the number of segmentations.
 %
 % DESCRIPTION:
 %   The average segmentation is computed by averaging the segmentations as follows:
