@@ -95,6 +95,10 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
             middleSegmentation = getLargestSegmentation(overlap);
         elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
             middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
+        elseif strcmp(algorithm, 'algorithm_AverageSmallestLargest')
+            smallest = getSmallestSegmentation(overlapFilled, nSeg);
+            largest = getLargestSegmentation(overlap);
+            middleSegmentation = algorithm_AverageSmallestLargest(smallest, largest);
         else
             throw(MException('TDSFT:algorithms', 'Algorithm not available'));
         end

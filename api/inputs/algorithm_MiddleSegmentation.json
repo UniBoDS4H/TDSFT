@@ -4,6 +4,7 @@
             "name": "Algorithm",
             "type": "DropDown",
             "value": [
+                "Average Smallest Largest",
                 "Largest Segmentation",
                 "Smallest Segmentation"
             ],

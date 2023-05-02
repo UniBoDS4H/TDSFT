@@ -6,7 +6,7 @@
 %   varargin: The function accept both 1 or 2 argument as follows:
 %     - 1 argument: 
 %         segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
-%               array containing the segmentations to fuse.
+%           array containing the segmentations to fuse.
 %     - 2 arguments:
 %         overlap (Matrix [height, width]):
 %           the overlap of the segmentations (the segmentations are already overlapped).
