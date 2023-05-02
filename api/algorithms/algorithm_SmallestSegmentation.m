@@ -3,30 +3,30 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       varargin: The function accept both 1 or 2 argument as follows:
-%
-%       1 param) 
-%           segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%   varargin: The function accept both 1 or 2 argument as follows:
+%     - 1 argument: 
+%         segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %               array containing the segmentations to fuse.
-%       2 param):
-%           overlap (Matrix [height, width]):
-%               the overlap of the segmentations (the segmentations are already overlapped).
-%               Before calling this function, the segmentations must be filled (need to be dense).
-%           nSeg (Integer):
-%               the number of segmentations.
+%     - 2 arguments:
+%         overlap (Matrix [height, width]):
+%           the overlap of the segmentations (the segmentations are already overlapped).
+%           Before calling this function, the segmentations must be filled (need to be dense).
+%         nSeg (Integer):
+%           the number of segmentations.
 %
 % OUTPUT:
-%       smallestSegmentation (Matrix [height, width]):
-%           the smallest segmentation.
+%   smallestSegmentation (Matrix [height, width]):
+%     the smallest segmentation.
+%
 % THROWS:
-%       smallestSegmentations:emptyInput (Exception):
-%           throwed if the input is empty.
-%       smallestSegmentations:wrongInput (Exception):
-%           throwed if the input param number is wrong.
+%   TDSFT:algorithms:
+%     throwed if the input is empty.
+%   TDSFT:algorithms:
+%     throwed if the input param number is wrong.
 %
 % DESCRIPTION:
-%       Fuse all the segmentations together overlapping them if needed and getting the smallest segmentation possible.
-%       The smallest segmentation is the perimeter of the area covered by every segmentation (the common area between every segmentation).
+%   Fuse all the segmentations together overlapping them if needed and getting the smallest segmentation possible.
+%   The smallest segmentation is the perimeter of the area covered by every segmentation (the common area between every segmentation).
 function smallestSegmentation = algorithm_SmallestSegmentation(varargin)  
     disp('Getting the smallest segmentation...');
 
@@ -36,9 +36,7 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
 
         % Check if the input is empty
         if isempty(segmentations)
-            ME = MException('smallestSegmentation:emptyInput', 'Segmentations array empty');
-            throw(ME);
-            return;
+            throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
         end
 
         % If there is only one segmentation, return it
@@ -48,20 +46,25 @@ function smallestSegmentation = algorithm_SmallestSegmentation(varargin)
             return;
         end
         
+        % preallocate the filledSegmentations array
+        filledSegmentations = cell(1, nSeg);
+
         % overlap the filled segmentations
-        filledSegmentations = [];
         for i=1:length(segmentations)
             filledSegmentations{i} = imfill(segmentations{i}, 'holes');
         end
-        overlap = overlapSegmentations(filledSegmentations);
+
+        try
+            overlap = overlapSegmentations(filledSegmentations);
+        catch ME
+            rethrow(ME);
+        end
 
     elseif varargin == 2
         overlap = varargin{1};
         nSeg = varargin{2}; 
     else
-        ME = MException('smallestSegmentation:wrongInput', 'Wrong number of input arguments');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Wrong number of input arguments'));
     end
 
     smallestSegmentation = getSmallestSegmentation(overlap, nSeg);

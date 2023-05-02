@@ -3,15 +3,16 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img (Matrix [height, width]):
-%           image to convert.
+%   img (Matrix [height, width]):
+%     image to convert.
 %
 % OUTPUT:
-%       cImg (Matrix [height, width]):
-%           converted image.
+%   cImg (Matrix [height, width]):
+%     converted image.
 %
 % THROWS:
-%       Error if the image is not converted to 8 bit.
+%   TDSFT:processImage:
+%     if the image is not converted to 8 bit.
 % 
 % DESCRIPTION:
 %      Converts an image to 8-bit format.
@@ -33,7 +34,6 @@ function cImg = imTo8bit(img)
     % check if the storing method of the converted image is `uint8`
     % else throws an error
     if ~isa(cImg, ImagesStoringMethods.INT_8.type)
-        ME = MException('imTo8bit:notConverted', 'Image not converted to 8 bit');
-        throw(ME);
+        throw(MException("TDSFT:processImage", "Image not converted to 8 bit"));
     end
 end

@@ -3,15 +3,16 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       img (Matrix [height, width]):
-%           black and white image
+%   img (Matrix [height, width]):
+%     black and white image.
+%
 % OUTPUT:
-%       check: 
-%           true (1) => white
-%           false (0) => black)
+%   check: 
+%     true (1) => white
+%     false (0) => black)
 %  
 % DESCRIPTION:
-%       Returns the background of a black and white image.
+%   Returns the background of a black and white image.
 function check = isWhiteBackground(img)
         [h, w] = size(img);
 

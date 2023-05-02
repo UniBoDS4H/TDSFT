@@ -29,5 +29,4 @@ function [seg, area] = getCommonArea(overlap, nSeg)
     end
 
     seg = bwperim(area);
-
 end

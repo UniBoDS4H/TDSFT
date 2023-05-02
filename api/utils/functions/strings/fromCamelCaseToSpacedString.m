@@ -3,16 +3,16 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       s (string):
-%           the camel case string.
+%   s (string):
+%     the camel case string.
 %
 % OUTPUT:
-%       result (string):
-%           the spaced string.
+%   result (string):
+%     the spaced string.
+%
 % DESCRIPTION:
-%       Convert from camelcase string to spaced string.
-%       CamelCase: ThisIsTheExampleString.
-%       Spaced: This Is The Example String.
+% Convert from camelcase string to spaced string.
+% Example: 'ThisIsTheExampleString' = 'This Is The Example String'.
 function result = fromCamelCaseToSpacedString(s)
-    result = regexprep(s, '([a-z])([A-Z])', '$1 $2');
+    result = regexprep(s, "([a-z])([A-Z])", "$1 $2");
 end

@@ -4,5 +4,5 @@
 %
 % DESCRIPTION: This function is used to add the folders of the project to the search path
 function runStartup() 
-    addpath(genpath('.'));
+    addpath(genpath("."));
 end

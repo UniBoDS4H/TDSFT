@@ -18,6 +18,6 @@ function largestSegmentation = getLargestSegmentation(overlappedSegmentations)
     overlappedSegmentations = imbinarize(overlappedSegmentations);
 
     % fill the resulting segmentation and get the perimeter
-    filledOverlap = imfill(overlappedSegmentations, 'holes');
+    filledOverlap = imfill(overlappedSegmentations, "holes");
     largestSegmentation = bwperim(filledOverlap);
 end

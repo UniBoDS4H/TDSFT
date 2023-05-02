@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %       startSegmentation (Integer || Matrix: [height, width]):
 %           the segmentation to start the fusion with.
@@ -17,7 +17,7 @@
 %           the average segmentation.
 %
 % THROWS:
-%      interpolateSegmentations:emptyInput:
+%      TDSFT:algorithms:
 %           if the input array `segmentations` is empty.
 %
 % DESCRIPTION:
@@ -28,16 +28,14 @@
 %       - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = getAverageSegmentation(segmentations, startSegmentation) 
     if isempty(segmentations)
-        ME = MException('interpolateSegmentations:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException("TDSFT:algorithms", "Segmentations array empty"));
     end
 
     nSeg = length(segmentations);
     
     % If there is only one segmentation, return it
     if nSeg == 1
-        smallestSegmentation = segmentations{1};
+        averageSeg = segmentations{1};
         return;
     end
 
@@ -63,6 +61,9 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
                 % If the pixel is a 1 then search the nearest pixel in the other segmentations
                 if mainSeg(i, j) == 1
 
+                    % Create an array containing the nearest pixels of the other segmentations
+                    % If the main segmentation is not inside `segmentations`, the length of the array
+                    % is the number of segmentations + 1
                     arrayLength = nSeg;
                     if ~isnumeric(startSegmentation)
                         arrayLength = arrayLength + 1;

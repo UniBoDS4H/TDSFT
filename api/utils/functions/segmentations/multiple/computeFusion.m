@@ -3,10 +3,13 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, nSeg] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, nSeg], Cells: matrix [height, width]):
 %           the segmentations to be fused.
 %       algorithm (string):
 %           the algorithm to be used for the fusion process.
+%       varargin (Cell array: [1, nVarargin]):
+%           the additional parameters of the algorithm.
+%           (Some algorithms require additional parameters)
 %
 % OUTPUT:
 %       resSeg (Matrix [height, width]):
@@ -23,7 +26,6 @@ function resSeg = computeFusion(segmentations, algorithm, varargin)
             resSeg = fun(segmentations);
         end
     
-    %Error is handled by the caller
     catch ME
         rethrow(ME);
     end

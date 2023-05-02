@@ -11,22 +11,20 @@
 %           the overlapped segmentations.
 %
 % THROWS:
-%       overlapSegmentations:emptyInput (Exception):
-%           throwed if the input is empty.
+%       TDSFT:algorithms:
+%           if the input is empty.
 %
 % DESCRIPTION:
 %       Overlap (sum) the input segmentations and return the resulting matrix.  
 function overlap = overlapSegmentations(segmentations)     
     % check if the input is empty
     if isempty(segmentations)
-        ME = MException('overlapSegmentations:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException("TDSFT:algorithms", "Segmentations array empty"));
     end
 
     % if there is only one segmentation, return it
     if length(segmentations) == 1
-        res = segmentations{1};
+        overlap = segmentations{1};
         return;
     end
 

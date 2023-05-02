@@ -3,33 +3,31 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%           array containing the segmentations to fuse.
+%   segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
+%     array containing the segmentations to fuse.
 %
 % OUTPUT:
-%       gtSegmentation (Matrix [height, width]):
-%           the ground truth segmentation computed with STAPLE algorithm.
+%   gtSegmentation (Matrix [height, width]):
+%     the ground truth segmentation computed with STAPLE algorithm.
 %
 % THROWS:
-%       staple:emptyInput (Exception):
-%           throwed if the input is empty.
+%   staple:emptyInput (Exception):
+%     throwed if the input is empty.
 %
 % DESCRIPTION:
-%       Use STAPLE algorithm to get the ground truth segmentation.
+%   Use STAPLE algorithm to get the ground truth segmentation.
 %
 % REFERENCES:
-%        Warfield, Simon K., Kelly H. Zou, and William M. Wells. 
-%        "Simultaneous truth and performance level estimation (STAPLE): 
-%        an algorithm for the validation of image segmentation." 
-%        Medical Imaging, IEEE Transactions on 23.7 (2004): 903-921.
+%   Warfield, Simon K., Kelly H. Zou, and William M. Wells. 
+%   "Simultaneous truth and performance level estimation (STAPLE): 
+%   an algorithm for the validation of image segmentation." 
+%   Medical Imaging, IEEE Transactions on 23.7 (2004): 903-921.
 function gtSegmentation = algorithm_STAPLE(segmentations)
     disp('Executing STAPLE...');
 
     % check if the input is empty
     if isempty(segmentations)
-        ME = MException('staple:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
     end
 
     % if there is only one segmentation, return it
@@ -39,13 +37,19 @@ function gtSegmentation = algorithm_STAPLE(segmentations)
     end
 
     % convert to the right format for STAPLE
-    stapleParam = [];
+    % See STAPLE file for more details
+
+    % get segmentations dimensions
+    [height, width] = size(segmentations{1});
+    nSeg = length(segmentations);
+
+    % preallocate the array
+    stapleParam = zeros(height*width, nSeg);
     for i=1:length(segmentations)
         seg = segmentations{i};
-        stapleParam = [stapleParam, seg(:)];
+        stapleParam(:, i) = seg(:);
     end
-    
-    [W, p, q] = STAPLE(stapleParam);
+    [W, ~, ~] = STAPLE(stapleParam);
 
     % get segmentations dimensions
     imageDims = size(segmentations{1});

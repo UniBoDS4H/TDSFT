@@ -3,34 +3,32 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
-%           array containing the segmentations to fuse.
+%   segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
+%     array containing the segmentations to fuse.
 %
 % OUTPUT:
-%       averageSeg (matrix [height, width]):
-%           The average segmentation.
+%   averageSeg (matrix [height, width]):
+%     The average segmentation.
 %
 % THROWS:
-%      largestSegmentation:emptyInput (Exception):
-%           if the input is empty.
+%   TDSFT:algorithms:
+%     if the input is empty.
 %
 % DESCRIPTION:
-%       Get the average segmentation between the smallest and the largest.
-%       The average segmentation is obtained by taking the 1-pixel line in the middle of
-%       the area between the two segmentations.
+%   Get the average segmentation between the smallest and the largest.
+%   The average segmentation is obtained by taking the 1-pixel line in the middle of
+%   the area between the two segmentations.
 function averageSeg = algorithm_AverageSmallestLargest(segmentations)
     disp('Getting the average segmentation between the smallest and the largest...');
 
     % Check if the input is empty, if it is the case throw an exception
     if isempty(segmentations)
-        ME = MException('largestSegmentation:emptyInput', 'Segmentations array empty');
-        throw(ME);
-        return;
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
     end
 
     % If there is only one segmentation, return it
     if length(segmentations) == 1
-        largestSegmentation = segmentations{1};
+        averageSeg = segmentations{1};
         return;
     end
 
