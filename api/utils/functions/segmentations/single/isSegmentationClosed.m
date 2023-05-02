@@ -17,7 +17,7 @@
 % DESCRIPTION:
 %       Checks if the segmentation is closed or not. Returns true if it is closed.
 function check = isSegmentationClosed(img, flag)
-    imgFill = imfill(img,'holes');
+    imgFill = imfill(img, "holes");
     dif1 = imgFill - img;
     if sum(sum(dif1)) ~= 0
         check = true;

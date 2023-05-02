@@ -6,7 +6,7 @@
 %       varargin: The function accept both 1 or 2 argument as follows:
 %
 %       1 param) 
-%           segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%           segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %               array containing the segmentations to fuse.
 %       2 param):
 %           overlap (Matrix [height, width]):
@@ -19,9 +19,9 @@
 %       smallestSegmentation (Matrix [height, width]):
 %           the smallest segmentation.
 % THROWS:
-%       smallestSegmentations:emptyInput (Exception):
+%       TDSFT:algorithms:
 %           throwed if the input is empty.
-%       smallestSegmentations:wrongInput (Exception):
+%       TDSFT:algorithms:
 %           throwed if the input param number is wrong.
 %
 % DESCRIPTION:

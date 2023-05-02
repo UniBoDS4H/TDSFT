@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %
 %       algorithm:
@@ -13,13 +13,13 @@
 %               - 'SmallestSegmentation'
 %
 % THROWS:
-%       middleSegmentations:emptyInput (Exception):
+%       TDSFT:algorithms:
 %           throwed if the input is empty.
 %
-%       middleSegmentations:wrongInputs (Exception):
+%       TDSFT:algorithms:
 %           throwed if the number of segmentations is even and the algorithm is not specified.
 %
-%       middleSegmentations:algorithmNotAvailable (Exception):
+%       TDSFT:algorithms:
 %           throwed if the algorithm choosed if the number of segmentations is even is not available.
 %
 % OUTPUT:
@@ -91,16 +91,12 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     if isequal(nSeg, 2)
         % if the number of segmentations is even, use the specified algorithm for the last two segmentations left
         algorithm = fromSpacedToFullName(algorithm);
-        try
-            if strcmp(algorithm, 'algorithm_LargestSegmentation')
-                middleSegmentation = getLargestSegmentation(overlap);
-            elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
-                middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
-            else
-                throw(MException('TDSFT:algorithms', 'Algorithm not available'));
-            end
-        catch ME
-            rethrow(ME);
+        if strcmp(algorithm, 'algorithm_LargestSegmentation')
+            middleSegmentation = getLargestSegmentation(overlap);
+        elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
+            middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
+        else
+            throw(MException('TDSFT:algorithms', 'Algorithm not available'));
         end
     else
         % if the number of segmentations is odd, return the segmentation left

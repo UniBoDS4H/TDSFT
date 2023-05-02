@@ -14,5 +14,5 @@
 %       Spaced: This Is The Example String.
 %       CamelCase: ThisIsTheExampleString.
 function result = fromSpacedStringToCamelCase(s)
-    result = regexprep(s, '([a-z]) ([A-Z])', '$1$2');
+    result = regexprep(s, "([a-z]) ([A-Z])", "$1$2");
 end

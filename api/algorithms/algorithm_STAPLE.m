@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %
 % OUTPUT:
@@ -37,6 +37,7 @@ function gtSegmentation = algorithm_STAPLE(segmentations)
     end
 
     % convert to the right format for STAPLE
+    % See STAPLE file for more details
     stapleParam = [];
     for i=1:length(segmentations)
         seg = segmentations{i};

@@ -5,15 +5,15 @@
 % PARAMETERS:
 %       The function accepts two different input parameters:
 %
-%       1) segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       1) segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %
 %       2) segmentations (Matrix [height, width]):
 %           the segmentations are already overlapped in a matrix.
-%           To overlap the segmentations must NOT be filled (the algorithm need NO dense segmentations).
+%           (The algorithm need NO dense segmentations, so to overlap the segmentations no fill holes is needed).
 %
 % THROWS:
-%       largestSegmentations:emptyInput (Exception):
+%       TDSFT:algorithms:
 %           throwed if the input is empty.
 %
 % OUTPUT:
@@ -41,7 +41,6 @@ function largestSegmentation = algorithm_LargestSegmentation(segmentations)
         end
 
         try
-            % get the largest segmentation
             overlap = overlapSegmentations(segmentations);
         catch ME
             rethrow(ME);

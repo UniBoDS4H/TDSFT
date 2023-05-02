@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %
 % OUTPUT:
@@ -11,7 +11,7 @@
 %           The average segmentation.
 %
 % THROWS:
-%      largestSegmentation:emptyInput (Exception):
+%      TDSFT:algorithms:
 %           if the input is empty.
 %
 % DESCRIPTION:

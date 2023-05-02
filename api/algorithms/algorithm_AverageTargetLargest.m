@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %
 % OUTPUT:
@@ -19,6 +19,11 @@
 function averageSeg = algorithm_AverageTargetLargest(segmentations)
     disp('Getting average segmentation by averaging with the largest segmentation...');
     
+    % Check if the input is empty, if it is the case throw an exception
+    if isempty(segmentations)
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
+    end
+
     try
         largest = algorithm_LargestSegmentation(segmentations);
         averageSeg = getAverageSegmentation(segmentations, largest);

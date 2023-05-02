@@ -11,7 +11,8 @@
 %           converted image.
 %
 % THROWS:
-%       Error if the image is not converted to 8 bit.
+%       TDSFT:processImage:
+%           if the image is not converted to 8 bit.
 % 
 % DESCRIPTION:
 %      Converts an image to 8-bit format.
@@ -33,6 +34,6 @@ function cImg = imTo8bit(img)
     % check if the storing method of the converted image is `uint8`
     % else throws an error
     if ~isa(cImg, ImagesStoringMethods.INT_8.type)
-        throw(MException('TDSFT:processImage', 'Image not converted to 8 bit'));
+        throw(MException("TDSFT:processImage", "Image not converted to 8 bit"));
     end
 end

@@ -15,5 +15,5 @@
 %       Fullname is needed in the standalone version to recognize algorithm files.
 %       Example: 'algorithm_' + 'TDSFT' = 'algorithm_TDSFT'.
 function fullName = getAlgorithmFullName(algorithm)
-    fullName = strcat('algorithm_', algorithm);
+    fullName = strcat("algorithm_", algorithm);
 end

@@ -11,7 +11,7 @@
 %       col: the col (x coordinate) of the centroid
 %
 % THROWS:
-%       MException('getCentroid:emptyPoints', 'The points array is empty'):
+%       TDSFT:algorithms:
 %           if the points array is empty
 %
 % DESCRIPTION:
@@ -21,11 +21,11 @@
 %       If the number of points is >= 3, use the centroid matlab built-in function.
 function [row, col] = getCentroid(points)
     if length(points) == 0
-        throw (MException('TDSFT:algorithms', 'The points array is empty'));
+        throw (MException("TDSFT:algorithms", "The points array is empty"));
     end
 
     % Remove duplicates
-    points = unique(points, 'rows');
+    points = unique(points, "rows");
     
     if size(points, 1) == 1
         row = points(1, 1);
@@ -34,7 +34,7 @@ function [row, col] = getCentroid(points)
     elseif size(points, 1) == 2
         [row, col] = getMiddlePoint(points);
     else
-        pgon = polyshape(points, 'KeepCollinearPoints', true);
+        pgon = polyshape(points, "KeepCollinearPoints", true);
 
         % Check if the points are collinear
         if isequal(area(pgon), 0)
@@ -43,6 +43,8 @@ function [row, col] = getCentroid(points)
             [row, col] = centroid(pgon);
         end
     end
+
+    % Round the coordinates to the nearest integer
     row = round(row);
     col = round(col);
 end

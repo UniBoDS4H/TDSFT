@@ -3,7 +3,7 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, raters] (Cells: matrix [height, width]):
+%       segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %           array containing the segmentations to fuse.
 %       startSegmentation (int):
 %           The index of the segmentation to be used as main segmentation.
@@ -13,7 +13,7 @@
 %           The average segmentation.
 %
 % THROWS:
-%       averageTargetFromInput:invalidIndex (Exception):
+%       TDSFT:algorithms:
 %           The start segmentation index is greater than the number of segmentations.
 %
 % DESCRIPTION:
@@ -25,10 +25,15 @@
 function averageSeg = algorithm_AverageTargetFromInput(segmentations, startSegmentation)
     s = strcat("Getting average segmentation by averaging with the segmentation ", num2str(startSegmentation{1}), "...");
     disp(s);
+
+    % Check if the input is empty, if it is the case throw an exception
+    if isempty(segmentations)
+        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
+    end
     
     try
-        if startSegmentation{1} > length(segmentations)
-            throw(MException('TDSFT:algorithms', 'The start segmentation index is greater than the number of segmentations.'));
+        if startSegmentation{1} > length(segmentations) || startSegmentation{1} < 1
+            throw(MException('TDSFT:algorithms', 'Wrong start segmentation index'));
         end
         averageSeg = getAverageSegmentation(segmentations, startSegmentation{1});
     catch ME

@@ -4,7 +4,7 @@
 %
 % PARAMETERS:
 %       segmentation (Matrix [height, width]):
-%           the segmentation where to find the nearest pixel with value val
+%           the segmentation where to find the nearest non-zero pixel
 %       startRow (int):
 %           the row (y coordinate) of the pixel from which to start the search
 %       startCol (int):
@@ -15,9 +15,9 @@
 %       col: the col (y coordinate) of the nearest non-zero pixel
 %
 % THROWS:
-%       getNearestPixelWithValue:invalidIndex:
+%       TDSFT:algorithms:
 %           if the pixel index is out of bounds
-%       getNearestPixelWithValue:noNonZeroPixel:
+%       TDSFT:algorithms:
 %           if no non-zero pixel is found
 %
 % DESCRIPTION:
@@ -26,7 +26,7 @@ function [row, col] = getNearestNonZeroPixel(segmentation, startRow, startCol, v
     [height, width] = size(segmentation);
     
     if startRow < 1 || startRow > height || startCol < 1 || startCol > width
-        throw(MException('TDSFT:algorithms', 'Pixel index out of bounds'));
+        throw(MException("TDSFT:algorithms", "Pixel index out of bounds"));
     end
 
     % If the pixel is already non-zero, return it
@@ -40,7 +40,7 @@ function [row, col] = getNearestNonZeroPixel(segmentation, startRow, startCol, v
     nearestPixelLinearIndex = nearestPixelArray(startRow, startCol);
 
     if nearestPixelLinearIndex == 0
-        throw(MException('TDSFT:algorithms', 'No non-zero pixel found'));
+        throw(MException("TDSFT:algorithms", "No non-zero pixel found"));
     end
 
     [row, col] = ind2sub([height, width], nearestPixelLinearIndex);
