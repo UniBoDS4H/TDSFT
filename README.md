@@ -7,6 +7,10 @@
 
 > "TDSFT (Two Dimensional Segmentation Fusion Tool): an extensible and open-source tool for combining different bidimensional annotations."
 
+<!-- Add resources/logo/logo_blackbg.svg -->
+
+<img src="resources/logo/logo_nobg.svg" width="300">
+
 1. [Description](#description)
 2. [Download](#download)
 3. [How to use](#how-to-use)
