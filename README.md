@@ -14,35 +14,107 @@
 1. [Description](#description)
 2. [Download](#download)
 3. [How to use](#how-to-use)
-4. [Extend](#extend)
+4. [How to extend](#how-to-extend)
+5. [License](#license)
+6. [Documentation](#documentation)
+7. [Acknowledgments](#acknowledgments)
+8. [Contact us](#contact-us)
 
 ## Description ##
-TDSFT is a *MATLAB Standalone Application* which permits to fuse of different bidimensional annotations.
-It can be easily installed on Windows, Linux and macOs. \
-It is developed to help *doctors, anatomopathologist, and anyone* who needs to fuse different segmentations. \
-The focus is on *medical images* but it can be applied to every field where annotation fusion is needed, e.g. mineral annotations.
+*TDSFT* is an extensible and open-source tool for combining different bidimensional annotations. \
+It is a portable *MATLAB Standalone Application* easy to run on Windows, Linux and macOs. \
+It permits, using several algorithms, to fuse of different bidimensional segmentations of the same object to obtain the *true segmentation*. 
+It is developed for *medical image annotations* but it can be easily applied wherever annotations fusion is needed, e.g. mineral annotations.
 
-It is developed to provide the community with a tool:
-- easy-to-use: everyone can easily use it, and every design choice was taken to help users in their daily usage;
-- extensible: it is easy to add and run your algorithms without the need to develop a further gui but using the instruments TDSFT provides;
-- open-source: everyone can access and use it (see the licenses).
+*TDSFT* is:
+- easy-to-use: user-friendly, every design choice was taken to help the user in every-day usage;
+- extensible: easy to extend by adding external matlab algorithms (see [here](#how-to-extend));
+- open-source: everyone can access and use it (see the license files).
+
+The following algorithms are implemented (see the documentation for more details):
+- [X] Average of smallest and largest segmentations
+- [X] Average with target from input
+- [X] Average with target the largest segmentation 
+- [X] Average with target the smallest segmentation
+- [X] Largest segmentation
+- [X] Middle segmentation
+- [X] Smallest segmentation
+- [X] [STAPLE](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1283110/)
 
 ## Download ##
+TODO: add standalone app details
 
 ## How to use ##
 
-## Extend ##
-To add external algorithms follow the next steps:
+## How to extend ##
+*TDSFT* is designed to help users to add their own algorithms without too much effort. 
+To do so, just follow the next steps:
 
-1. Create a MATLAB source file, the filename must follow this pattern : algorithm_{yourName}.m \
-   (substitute {yourName} with the name of your algorithm written in camel case, see [algorithms](api/algorithms) directory for some examples);
-2. Copy the file inside the [algorithms](api/algorithms) directory
-3. Inside the source file must be present only one function called as the source file.
-4. The default aurgument of the function is an array 
+1. First of all you must write the code using MATLAB;
+2. Then, create the source file inside the [algorithms](api/algorithms) directory. The filename must follow this pattern: `algorithm_{YourName}.m` \
+   (substitute `{yourName}` with the name of your algorithm written in camel case, e.g. `algorithm_ThisIsMyAlgorithm.m` 
+   See [algorithms](api/algorithms) directory for more examples;
+3. Inside the source file must be present only one function called as the filename (e.g. [see here](api/algorithms/algorithm_LargestSegmentation.m));
+4. Every algorithm takes as input argument a cell array containing all the segmentations (`Cell array: [1, raters], Cells: matrix [height, width]`);
+5. Furthermore, it is possible to create an ad-hoc gui for user runtime input for your algorithms. 
+   If your algorithm requires, in addition to the segmentations array, some other inputs specified at runtime by the user it is possible to create
+   a specific input gui to do so. Just follow the next steps:
+      1. Create a file called `algorithm_{YourName}.json` inside the [inputs](api/inputs) directory (you have substitute `{YourName}` with the same name used for the algorithm);
+      2. The json file must follow this template:
+         ```json
+             {
+                "inputs": [
+                    {
+                        "name": "Test DropDown",
+                        "type": "DropDown",
+                        "value": [
+                            "Value 1",
+                            "Value 2"
+                        ],
+                        "help": "This is a help text for the dropdown"
+                    },
+                    {
+                        "name": "Test Check",
+                        "type": "Check",
+                        "help": "This is a help text for the check"
+                    }, 
+                    {
+                        "name": "Test Text",
+                        "type": "Text",
+                        "help": "This is a help text for the text"
+                    },
+                    {
+                        "name": "Target Segmentation Index",
+                        "type": "InputSegmentationsSelector",
+                        "help": "This is a help text for the text"
+                    },
+                    {
+                        "name": "Test Numeric Text",
+                        "type": "Number",
+                        "value": 1,
+                        "limits": [1, 5],
+                        "help": "This is a help text for the text"
+                    }
+                ]
+            } 
+         ```
+         This is an overview of all the components available:
+         1. DropDown: DropDown Menu
+         2. Check -> CheckBox
+         3. Text -> Text Field
+         4. InputSegmentationsSelector
+         5. Number -> Number Field
+
+## Documentation ##
+See the [documentation file]() for the details.
+
+## License ##
+See the [license file](LICENSE_GENERAL) for the details. \
+The [STAPLE implementation](api/include/STAPLE.m) has its own [license file](LICENSE_STAPLE).
 
 ## Acknowledgments ##
 - Lorenzo Drudi, Bachelor's Degree Student in Computer Sciences, University of Bologna, Italy \
-  email: lorenzodrudi11@gmail.com \
+  email:  &nbsp; lorenzodrudi11@gmail.com \
   github: [@LorenzoDrudi](https://github.com/LorenzoDrudi)
   
 ## Contact Us ##
