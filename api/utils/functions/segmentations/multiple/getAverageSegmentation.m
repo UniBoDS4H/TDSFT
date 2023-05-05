@@ -53,6 +53,13 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
     % Create the output segmentation
     averageSeg = zeros(height, width);
 
+    % If the main segmentation is not inside `segmentations`, the length of the array
+    % is the number of segmentations + 1
+    arrayLength = nSeg;
+    if ~isnumeric(startSegmentation)
+        arrayLength = arrayLength + 1;
+    end
+
     % For each pixel of the main segmentation
     try 
         for i = 1:height
@@ -61,15 +68,10 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
                 % If the pixel is a 1 then search the nearest pixel in the other segmentations
                 if mainSeg(i, j) == 1
 
-                    % Create an array containing the nearest pixels of the other segmentations
-                    % If the main segmentation is not inside `segmentations`, the length of the array
-                    % is the number of segmentations + 1
-                    arrayLength = nSeg;
-                    if ~isnumeric(startSegmentation)
-                        arrayLength = arrayLength + 1;
-                    end
+                    % Array containing the pixel himself and the nearest pixels of the other segmentations
                     nearestPixels = zeros(arrayLength, 2);
 
+                    % Current index of the nearestPixels array
                     idx = 1;
 
                     % Add the pixel of the main segmentation to the array
@@ -83,9 +85,11 @@ function averageSeg = getAverageSegmentation(segmentations, startSegmentation)
                         end
                         % The index of the array is the index of the segmentation + 1 because the first
                         % element is the main segmentation pixel 
-                        nearestPixels(idx, :) = getNearestNonZeroPixel(segmentations{k}, i, j);
+                        [row, col] = getNearestNonZeroPixel(segmentations{k}, i, j);
+                        nearestPixels(idx, :) = [row, col];
                         idx = idx + 1;
                     end
+                   
                     % Get the centroid of the points
                     [row, col] = getCentroid(nearestPixels);    
                         

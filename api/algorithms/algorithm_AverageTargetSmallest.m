@@ -25,8 +25,8 @@ function averageSeg = algorithm_AverageTargetSmallest(segmentations)
     end
 
     try
-        largest = algorithm_Smallest(segmentations);
-        averageSeg = getAverageSegmentation(segmentations, largest);
+        smallest = algorithm_Smallest(segmentations);
+        averageSeg = getAverageSegmentation(segmentations, smallest);
     catch ME
         rethrow(ME);
     end
