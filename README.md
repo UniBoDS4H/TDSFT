@@ -54,7 +54,7 @@ To do so, just follow the next steps:
 2. Then, create the source file inside the [algorithms](api/algorithms) directory. The filename must follow this pattern: `algorithm_{YourName}.m` \
    (substitute `{yourName}` with the name of your algorithm written in camel case, e.g. `algorithm_ThisIsMyAlgorithm.m` 
    See [algorithms](api/algorithms) directory for more examples;
-3. Inside the source file must be present only one function called as the filename (e.g. [see here](api/algorithms/algorithm_LargestSegmentation.m));
+3. Inside the source file must be present only one function called as the filename (e.g. [see here](api/algorithms/algorithm_Largest.m));
 4. Every algorithm takes as input argument a cell array containing all the segmentations (`Cell array: [1, raters], Cells: matrix [height, width]`);
 5. Furthermore, it is possible to create an ad-hoc gui for user runtime input for your algorithms. 
    If your algorithm requires, in addition to the segmentations array, some other inputs specified at runtime by the user it is possible to create

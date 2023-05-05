@@ -4,9 +4,9 @@
             "name": "Algorithm",
             "type": "DropDown",
             "value": [
-                "Average Smallest Largest",
-                "Largest Segmentation",
-                "Smallest Segmentation"
+                "Average Smallest And Largest",
+                "Largest",
+                "Smallest"
             ],
             "help": "Select the algorithm to use for fuse the last two remaining segmentations."
         }

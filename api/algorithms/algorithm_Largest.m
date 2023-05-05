@@ -23,8 +23,8 @@
 %   Fuse all the segmentations together overlapping them and getting the largest possible segmentation.
 %   The largest segmentation is the smallest segmentation possible which contains each input segmentation.
 %   To obtain it the segmentations are overlapped and then is returned the perimeter of the area covered by them.
-function largestSegmentation = algorithm_LargestSegmentation(segmentations) 
-    disp('Getting the largest segmentation...');
+function largestSegmentation = algorithm_Largest(segmentations) 
+    disp('Getting the largest...');
 
     if iscell(segmentations)
 

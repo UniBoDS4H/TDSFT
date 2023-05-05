@@ -27,8 +27,8 @@
 % DESCRIPTION:
 %   Fuse all the segmentations together overlapping them if needed and getting the smallest segmentation possible.
 %   The smallest segmentation is the perimeter of the area covered by every segmentation (the common area between every segmentation).
-function smallestSegmentation = algorithm_SmallestSegmentation(varargin)  
-    disp('Getting the smallest segmentation...');
+function smallestSegmentation = algorithm_Smallest(varargin)  
+    disp('Getting the smallest...');
 
     % if the segmentations are not overlapped, overlap them
     if nargin == 1

@@ -10,7 +10,7 @@
 %     Available algorithms: 
 %       - 'LargestSegmentation'
 %       - 'SmallestSegmentation'
-%       - 'AverageSmallestLargest'
+%       - 'AverageSmallestAndLargest'
 %
 % THROWS:
 %   TDSFT:algorithms:
@@ -29,8 +29,8 @@
 %   Discard outliers until the middle segmentation is reached. To do that iterate over the segmentations and
 %   discard the largest and the smallest segmentation at each iteration.
 %   If the number of segmentations is even specify a method for the last two segmentations left.
-function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algorithm)     
-    disp('Getting the middle segmentation...');
+function middleSegmentation = algorithm_Middle(segmentations, algorithm)     
+    disp('Getting the middle...');
 
     % check if the input is empty
     if isempty(segmentations)
@@ -91,14 +91,14 @@ function middleSegmentation = algorithm_MiddleSegmentation(segmentations, algori
     if isequal(nSeg, 2)
         % if the number of segmentations is even, use the specified algorithm for the last two segmentations left
         algorithm = fromSpacedToFullName(algorithm);
-        if strcmp(algorithm, 'algorithm_LargestSegmentation')
+        if strcmp(algorithm, 'algorithm_Largest')
             middleSegmentation = getLargestSegmentation(overlap);
-        elseif strcmp(algorithm, 'algorithm_SmallestSegmentation')
+        elseif strcmp(algorithm, 'algorithm_Smallest')
             middleSegmentation = getSmallestSegmentation(overlapFilled, nSeg);
-        elseif strcmp(algorithm, 'algorithm_AverageSmallestLargest')
+        elseif strcmp(algorithm, 'algorithm_AverageSmallestAndLargest')
             smallest = getSmallestSegmentation(overlapFilled, nSeg);
             largest = getLargestSegmentation(overlap);
-            middleSegmentation = algorithm_AverageSmallestLargest(smallest, largest);
+            middleSegmentation = algorithm_AverageSmallestAndLargest(smallest, largest);
         else
             throw(MException('TDSFT:algorithms', 'Algorithm not available'));
         end

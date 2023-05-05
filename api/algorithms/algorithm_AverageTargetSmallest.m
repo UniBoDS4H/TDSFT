@@ -17,7 +17,7 @@
 %   - if the segmentations are 2, the average pixel is the middle point between the two pixels;
 %   - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = algorithm_AverageTargetSmallest(segmentations)
-    disp('Getting average segmentation by averaging with the largest segmentation......');
+    disp('Getting average segmentation targetting the smallest......');
     
     % Check if the input is empty, if it is the case throw an exception
     if isempty(segmentations)
@@ -25,7 +25,7 @@ function averageSeg = algorithm_AverageTargetSmallest(segmentations)
     end
 
     try
-        largest = algorithm_SmallestSegmentation(segmentations);
+        largest = algorithm_Smallest(segmentations);
         averageSeg = getAverageSegmentation(segmentations, largest);
     catch ME
         rethrow(ME);

@@ -28,7 +28,7 @@
 %   segmentations from which the smallest and the largest are obtained.
 %   The average segmentation is obtained by taking the 1-pixel line in the middle of
 %   the area between the two segmentations.
-function averageSeg = algorithm_AverageSmallestLargest(varargin)
+function averageSeg = algorithm_AverageSmallestAndLargest(varargin)
     disp('Getting the average segmentation between the smallest and the largest...');
 
     if nargin == 1
@@ -46,8 +46,8 @@ function averageSeg = algorithm_AverageSmallestLargest(varargin)
         end
 
         try
-            smallest = algorithm_SmallestSegmentation(segmentations);
-            largest = algorithm_LargestSegmentation(segmentations);
+            smallest = algorithm_Smallest(segmentations);
+            largest = algorithm_Largest(segmentations);
         catch ME
             rethrow(ME);
         end

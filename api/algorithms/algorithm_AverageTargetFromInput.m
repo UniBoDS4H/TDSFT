@@ -25,7 +25,7 @@
 %   - if the segmentations are 2, the average pixel is the middle point between the two pixels;
 %   - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = algorithm_AverageTargetFromInput(segmentations, startSegmentation)
-    s = strcat("Getting average segmentation by averaging with the segmentation ", num2str(startSegmentation{1}), "...");
+    s = strcat("Getting average segmentation targetting the segmentation ", num2str(startSegmentation{1}), "...");
     disp(s);
 
     % Check if the input is empty, if it is the case throw an exception
