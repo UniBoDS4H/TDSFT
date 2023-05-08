@@ -4,16 +4,18 @@
 %
 % PARAMETERS:
 %   algorithm (string):
-%     algorithm name.
+%     an algorithm name (already in camelcase).
+%     (e.g. 'AverageTargetLargest')
 %
 % OUTPUT:
 %   fullName (string):
 %     fullName of the algorithm.
+%     (e.g. 'algorithm_AverageTargetLargest')
 %
 % DESCRIPTION:
-%   Get the full name of the specified algorithm.
+%   Get the full name of the camel case in.
 %   Fullname is needed in the standalone version to recognize algorithm files.
-%   Example: 'algorithm_' + 'TDSFT' = 'algorithm_TDSFT'.
-function fullName = getAlgorithmFullName(algorithm)
+%   Example: 'algorithm_' + 'AverageTargetLargest' = 'algorithm_AverageTargetLargest'.
+function fullName = fromCamelCaseToFullNameAlgorithm(algorithm)
     fullName = strcat("algorithm_", algorithm);
 end

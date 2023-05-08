@@ -3,16 +3,18 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       s (string):
-%           the spaced string.
+%   s (string):
+%     string with spaces.
+%     (e.g. 'This Is A String With Spaces')
 %
 % OUTPUT:
-%       result (string):
-%           the camel case string.
+%   result (string):
+%     the string where spaces are replaced by camel case separation.
+%     (e.g. 'ThisIsACamelCaseString').
 %
 % DESCRIPTION:
 %   Convert from spaced string to camelcase string.
 %   Example: 'This Is The Example String' = 'ThisIsTheExampleString'.
-function result = fromSpacedStringToCamelCase(s)
+function result = fromSpacedToCamelCaseString(s)
     result = regexprep(s, "([a-z]) ([A-Z])", "$1$2");
 end

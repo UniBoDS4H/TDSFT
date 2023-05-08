@@ -3,21 +3,25 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       overlap: the overlap between the binary segmentations
-%       nSeg: the number of segmentations
+%   overlap(Matrix: [height, width]:
+%     the overlap between the binary filled segmentations.
+%   nSeg(int):
+%     the number of segmentations.
 %
 % OUTPUT:
-%       seg: the segmentation of the common area
-%       area: the common area between all the segmentations
+%   seg((Matrix: [height, width]):
+%     the segmentation of the common area.
+%   area:
+%     the common area between all the segmentations.
 %
 % DESCRIPTION:
-%       Get the common area between all the segmentations.
-%       The common area is the area selected by all the segmentations.
-%       The common area is computed getting the pixel where value == number of segmentations.
-function [seg, area] = getCommonArea(overlap, nSeg) 
+%   Get the common area between all the segmentations.
+%   The common area is the area covered by all the segmentations.
+function [area, perimeter] = getCommonArea(overlap, nSeg) 
     area = overlap;
     [m, n] = size(overlap);
 
+    % If the pixel is covered by all the segmentations, it is set to 1.
     for i = 1:m
         for j = 1:n
             if area(i,j) == nSeg
@@ -28,5 +32,5 @@ function [seg, area] = getCommonArea(overlap, nSeg)
         end
     end
 
-    seg = bwperim(area);
+    perimeter = bwperim(area);
 end

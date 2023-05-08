@@ -5,10 +5,12 @@
 % PARAMETERS:
 %   s (string):
 %     the camel case string.
+%     (e.g. 'ThisIsACamelCaseString').
 %
 % OUTPUT:
 %   result (string):
 %     the spaced string.
+%     (e.g. 'This Is A Spaced String').
 %
 % DESCRIPTION:
 % Convert from camelcase string to spaced string.

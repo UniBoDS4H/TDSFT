@@ -26,19 +26,19 @@ function [row, col] = getCentroid(points)
         throw (MException("TDSFT:algorithms", "The points array is empty"));
     end
 
-    % Remove duplicates
+    % Remove duplicates.
     points = unique(points, "rows");
     
     if size(points, 1) == 1
         row = points(1, 1);
         col = points(1, 2);
-    % not using (a+b)/2 because it could overflow
+    % Not using (a+b)/2 because it could overflow.
     elseif size(points, 1) == 2
         [row, col] = getMiddlePoint(points);
     else
         pgon = polyshape(points, "KeepCollinearPoints", true);
 
-        % Check if the points are collinear
+        % Check if the points are collinear.
         if isequal(area(pgon), 0)
             [row, col] = getMiddlePoint(points);
         else    

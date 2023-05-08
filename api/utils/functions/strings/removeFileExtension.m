@@ -4,14 +4,14 @@
 %
 % PARAMETERS:
 %   filename (string):
-%     the filename.
+%     a filename.
 %
 % OUTPUT:
 %   result (string):
 %     the filename without the extension.   
 %
 % DESCRIPTION:
-%   Get the filename without extension.
+%   Returns the filename without the extension.
 %   Example: 'filename.m' = 'filename'.
 function result = removeFileExtension(filename)
     expression = ".*(?=\.)";
