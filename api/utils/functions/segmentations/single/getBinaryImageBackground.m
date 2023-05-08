@@ -7,7 +7,7 @@
 %     a black and white image.
 %
 % OUTPUT:
-%   bg:
+%   bg (int):
 %     get the background of a black and white image.
 %     1 if the background is white, 0 otherwise.
 %  

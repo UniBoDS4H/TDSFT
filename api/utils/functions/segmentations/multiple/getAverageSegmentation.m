@@ -12,7 +12,7 @@
 %     - matrix:  the segmentation to start the fusion with.
 %
 % OUTPUT:
-%   averageSeg(Matrix: [height, width]):
+%   averageSeg (Matrix: [height, width]):
 %     the average segmentation.
 %
 % THROWS:

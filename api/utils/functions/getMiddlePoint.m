@@ -7,9 +7,9 @@
 %     the collinear points from which the middle point is computed
 %
 % OUTPUT:
-%   row:
+%   row (int):
 %     the row (y coordinate) of the middle point
-%   col:
+%   col (int):
 %     the col (x coordinate) of the middle point
 %
 % THROWS:
