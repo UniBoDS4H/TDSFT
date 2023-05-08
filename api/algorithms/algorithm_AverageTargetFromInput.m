@@ -5,7 +5,7 @@
 % PARAMETERS:
 %   segmentations (Cell array: [1, raters], Cells: matrix [height, width]):
 %     array containing the segmentations to fuse.
-%   startSegmentation (int):
+%   target (int):
 %     the index of the segmentation to be used as main segmentation.
 %
 % OUTPUT:
@@ -13,8 +13,6 @@
 %     the average segmentation.
 %
 % THROWS:
-%   TDSFT:algorithms:
-%     the segmentations array is empty.
 %   TDSFT:algorithms:
 %     the start segmentation index is greater than the number of segmentations.
 %
@@ -24,20 +22,13 @@
 %   with value 1 in the other segmentations. Then it is computed the average pixel:
 %   - if the segmentations are 2, the average pixel is the middle point between the two pixels;
 %   - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
-function averageSeg = algorithm_AverageTargetFromInput(segmentations, startSegmentation)
-    s = strcat("Getting average segmentation targetting the segmentation ", num2str(startSegmentation{1}), "...");
-    disp(s);
-
-    % Check if the input is empty, if it is the case throw an exception
-    if isempty(segmentations)
-        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
-    end
-    
+function averageSeg = algorithm_AverageTargetFromInput(segmentations, target)   
     try
-        if startSegmentation{1} > length(segmentations) || startSegmentation{1} < 1
+        % Check if the target segmentation is in the range.
+        if target > length(segmentations) || target < 1
             throw(MException('TDSFT:algorithms', 'Wrong start segmentation index'));
         end
-        averageSeg = getAverageSegmentation(segmentations, startSegmentation{1});
+        averageSeg = getAverageSegmentation(segmentations, target);
     catch ME
         rethrow(ME);
     end

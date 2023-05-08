@@ -18,10 +18,6 @@
 %   averageSeg (matrix [height, width]):
 %     The average segmentation.
 %
-% THROWS:
-%   TDSFT:algorithms:
-%     if the input is empty.
-%
 % DESCRIPTION:
 %   Get the average segmentation between the smallest and the largest.
 %   Can be passed as input the smallest and the largest segmentation or an array of
@@ -29,21 +25,8 @@
 %   The average segmentation is obtained by taking the 1-pixel line in the middle of
 %   the area between the two segmentations.
 function averageSeg = algorithm_AverageSmallestAndLargest(varargin)
-    disp('Getting the average segmentation between the smallest and the largest...');
-
     if nargin == 1
         segmentations = varargin{1};
-
-        % Check if the input is empty, if it is the case throw an exception
-        if isempty(segmentations)
-            throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
-        end
-
-        % If there is only one segmentation, return it
-        if length(segmentations) == 1
-            averageSeg = segmentations{1};
-            return;
-        end
 
         try
             smallest = algorithm_Smallest(segmentations);
@@ -58,7 +41,7 @@ function averageSeg = algorithm_AverageSmallestAndLargest(varargin)
         throw(MException('TDSFT:algorithms', 'Wrong number of parameters'));
     end
 
-    % Overlap the two smallest and the largest segmentations
+    % Overlap the smallest and the largest segmentations
     averageSeg = smallest + largest;
     
     % Fill the holes and get the area between the two segmentations

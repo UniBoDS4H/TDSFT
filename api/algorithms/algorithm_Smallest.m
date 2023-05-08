@@ -20,52 +20,27 @@
 %
 % THROWS:
 %   TDSFT:algorithms:
-%     throwed if the input is empty.
-%   TDSFT:algorithms:
 %     throwed if the input param number is wrong.
 %
 % DESCRIPTION:
 %   Fuse all the segmentations together overlapping them if needed and getting the smallest segmentation possible.
 %   The smallest segmentation is the perimeter of the area covered by every segmentation (the common area between every segmentation).
 function smallestSegmentation = algorithm_Smallest(varargin)  
-    disp('Getting the smallest...');
-
     % if the segmentations are not overlapped, overlap them
     if nargin == 1
         segmentations = varargin{1};
-
-        % Check if the input is empty
-        if isempty(segmentations)
-            throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
-        end
-
-        % If there is only one segmentation, return it
         nSeg = length(segmentations);
-        if nSeg == 1
-            smallestSegmentation = segmentations{1};
-            return;
-        end
         
-        % preallocate the filledSegmentations array
-        filledSegmentations = cell(1, nSeg);
+        % Fill and overlap the segmentations.
+        filledSegmentations = getFilledSegmentations(segmentations);
+        overlap = overlapSegmentations(filledSegmentations);
 
-        % overlap the filled segmentations
-        for i=1:length(segmentations)
-            filledSegmentations{i} = imfill(segmentations{i}, 'holes');
-        end
-
-        try
-            overlap = overlapSegmentations(filledSegmentations);
-        catch ME
-            rethrow(ME);
-        end
-
-    elseif varargin == 2
+    elseif nargin == 2
         overlap = varargin{1};
         nSeg = varargin{2}; 
     else
         throw(MException('TDSFT:algorithms', 'Wrong number of input arguments'));
     end
 
-    smallestSegmentation = getSmallestSegmentation(overlap, nSeg);
+    [~, smallestSegmentation] = getCommonArea(overlap, nSeg);
 end

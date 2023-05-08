@@ -8,7 +8,7 @@
 %
 % OUTPUT:
 %   averageSeg (matrix [height, width]):
-%     The average segmentation.       
+%     the average segmentation.       
 %
 % DESCRIPTION:
 %   The average segmentation is computed by averaging the segmentations as follows:
@@ -17,13 +17,6 @@
 %   - if the segmentations are 2, the average pixel is the middle point between the two pixels;
 %   - if the segmentations are more than 2, the average pixel is the centroid of the pixels. 
 function averageSeg = algorithm_AverageTargetLargest(segmentations)
-    disp('Getting average segmentation targetting the largest...');
-    
-    % Check if the input is empty, if it is the case throw an exception
-    if isempty(segmentations)
-        throw(MException('TDSFT:algorithms', 'Segmentations array empty'));
-    end
-
     try
         largest = algorithm_Largest(segmentations);
         averageSeg = getAverageSegmentation(segmentations, largest);
