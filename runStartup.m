@@ -1,4 +1,4 @@
-% AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
 % DATE: March 17, 2022
 % NAME: TDSFT (version 1.0)
 %
