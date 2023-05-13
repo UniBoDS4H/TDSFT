@@ -24,9 +24,9 @@ classdef OnePixelLineTypes
 
     % Enumeration values with their corresponding string
     enumeration
-        EXTERNAL ("external")
-        MIDDLE ("middle")
-        INTERNAL ("internal")
+        EXTERNAL ('external')
+        MIDDLE ('middle')
+        INTERNAL ('internal')
     end
 end
 

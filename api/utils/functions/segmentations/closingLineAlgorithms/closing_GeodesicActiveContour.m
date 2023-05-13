@@ -25,7 +25,7 @@
 % REFERENCES:
 %   Caselles, V., Kimmel, R. & Sapiro, G. Geodesic Active Contours.
 %   International Journal of Computer Vision 22, 61–79 (1997).
-function res = close_GeodesicActiveContour(fusionResult, inputSegmentations)
+function res = closing_GeodesicActiveContour(fusionResult, inputSegmentations)
     mask = getSegmentationsMask(inputSegmentations);
     incrementFactor = 25;
     res = activecontour(fusionResult .* incrementFactor, mask, "edge");

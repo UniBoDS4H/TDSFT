@@ -13,5 +13,6 @@
 % DESCRIPTION:
 %   Simple function to permit to see the result of the fusion process
 %   without applying the closing operation.
-function fusionResult = close_NoClosing(fusionResult, ~)
+function fusionResult = closing_NoClosing(fusionResult, ~)
+    % Do nothing
 end

@@ -26,7 +26,7 @@
 %   "Active contours without edges,"
 %   in IEEE Transactions on Image Processing, 
 %   vol. 10, no. 2, pp. 266-277, Feb. 2001, doi: 10.1109/83.902291.
-function res = close_ChanVese(fusionResult, inputSegmentations)
+function res = closing_ChanVese(fusionResult, inputSegmentations)
     mask = getSegmentationsMask(inputSegmentations);
     nIterations = 3000;
     smoothfactor = 0.6;
