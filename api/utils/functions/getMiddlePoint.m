@@ -1,4 +1,4 @@
-% AUTHOR: Lorenzo Drudi (E-mail: lorenzo.drudi5@studio.unibo.it)
+% AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
 % DATE: April 27, 2023
 % NAME: TDSFT (version 1.0)
 %
@@ -7,9 +7,9 @@
 %     the collinear points from which the middle point is computed
 %
 % OUTPUT:
-%   row:
+%   row (int):
 %     the row (y coordinate) of the middle point
-%   col:
+%   col (int):
 %     the col (x coordinate) of the middle point
 %
 % THROWS:
@@ -26,7 +26,7 @@ function [x, y] = getMiddlePoint(points)
         throw(MException("TDSFT:algorithms", "Insert at least 2 points"));
     end
 
-    % If there are more than 2 points search for the extreme points
+    % If there are more than 2 points search for the extreme points.
     if length(points) > 2
         extremePoints = zeros(2,2);
         [~, minIdx] = min(points(:,1));

@@ -3,20 +3,22 @@
 % NAME: TDSFT (version 1.0)
 %
 % DESCRIPTION: Enumeration class for image storing methods.
-%              It is used to be able to use pretty names for 
+%              Used to be able to use pretty names for 
 %              the different storing methods.
 classdef ImagesStoringMethods
     properties
-        type
+        string
     end
 
     methods
         % Constructor
         %
         % Parameters:
-        %   m: string representing the type of the image
-        function storing_method = ImagesStoringMethods(m)
-            storing_method.type = m;
+        %   s: string representing the type of the image
+        % Return:
+        %   the image storing method
+        function storing_method = ImagesStoringMethods(s)
+            storing_method.string = s;
         end
     end
 

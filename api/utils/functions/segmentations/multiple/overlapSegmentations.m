@@ -3,36 +3,36 @@
 % NAME: TDSFT (version 1.0)
 %
 % PARAMETERS:
-%       segmentations (Cell array: [1, nSeg] (Cells: matrix [height, width]):
-%           the segmentations to overlap.
+%   segmentations (Cell array: [1, nSeg] (Cells: matrix [height, width]):
+%     the segmentations to overlap.
 %
 % OUTPUT:
-%       overlap (Matrix [height, width]):
-%           the overlapped segmentations.
+%   overlap (Matrix [height, width]):
+%     the overlapped segmentations.
 %
 % THROWS:
-%       TDSFT:algorithms:
-%           if the input is empty.
+%   TDSFT:algorithms:
+%     if the input is empty.
 %
 % DESCRIPTION:
-%       Overlap (sum) the input segmentations and return the resulting matrix.  
+%   Overlap (sum) the input segmentations and return the resulting matrix.  
 function overlap = overlapSegmentations(segmentations)     
-    % check if the input is empty
+    % Check if the input is empty.
     if isempty(segmentations)
         throw(MException("TDSFT:algorithms", "Segmentations array empty"));
     end
 
-    % if there is only one segmentation, return it
+    % If there is only one segmentation, return it.
     if length(segmentations) == 1
         overlap = segmentations{1};
         return;
     end
 
-    % initialize the overlap
+    % Initialize the overlap.
     [height, width] = size(segmentations{1});
-    overlap = zeros(height, width, 'uint8');
+    overlap = zeros(height, width, "uint8");
 
-    % overlap all the segmentations
+    % Overlap all the segmentations.
     for i=1:length(segmentations)
         seg = uint8(segmentations{i});
         overlap = overlap + seg;
