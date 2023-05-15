@@ -38,7 +38,15 @@ function [row, col] = getCentroid(points)
     elseif size(points, 1) == 2
         [row, col] = getSegmentMiddlePoint(points);
     else
+        % Disable polyshape warnings.
+        % Polyshape throws warnings when the points are collinear or when the
+        % polygon is not valid.
+        % These situations are handled by the code at line 50.
+        warning("off", "MATLAB:polyshape:repairedBySimplify");
+        warning("off", "MATLAB:polyshape:boolOperationFailed");
         pgon = polyshape(points, "KeepCollinearPoints", true);
+        warning("on", "MATLAB:polyshape:repairedBySimplify");
+        warning("on", "MATLAB:polyshape:boolOperationFailed");
 
         % Check if the points are collinear.
         if isequal(area(pgon), 0)
