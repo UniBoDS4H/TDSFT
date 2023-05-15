@@ -51,15 +51,15 @@ TODO: add standalone app details
 To do so, just follow the next steps:
 
 1. First of all you must write the code using MATLAB;
-2. Then, create the source file inside the [algorithms](api/algorithms) directory. The filename must follow this pattern: `algorithm_{YourName}.m` \
-   (substitute `{yourName}` with the name of your algorithm written in camel case, e.g. `algorithm_ThisIsMyAlgorithm.m` 
-   See [algorithms](api/algorithms) directory for more examples;
-3. Inside the source file must be present only one function called as the filename (e.g. [see here](api/algorithms/algorithm_Largest.m));
+2. Then, create the source file inside the [algorithms](api/fusionAlgorithms) directory. The filename must follow this pattern: `fusion_{YourName}.m` \
+   (substitute `{yourName}` with the name of your algorithm written in camel case, e.g. `fusion_ThisIsMyAlgorithm.m` 
+   See [algorithms](api/fusionAlgorithms) directory for more examples;
+3. Inside the source file must be present only one function called as the filename (e.g. [see here](api/algorithms/fusion_Largest.m));
 4. Every algorithm takes as input argument a cell array containing all the segmentations (`Cell array: [1, raters], Cells: matrix [height, width]`);
 5. Furthermore, it is possible to create an ad-hoc gui for user runtime input for your algorithms. 
    If your algorithm requires, in addition to the segmentations array, some other inputs specified at runtime by the user it is possible to create
    a specific input gui to do so. Just follow the next steps:
-      1. Create a file called `algorithm_{YourName}.json` inside the [inputs](api/inputs) directory (you have substitute `{YourName}` with the same name used for the algorithm);
+      1. Create a file called `fusion_{YourName}.json` inside the [inputs](api/fusionAlgorithms/inputs) directory (you have substitute `{YourName}` with the same name used for the algorithm);
       2. The json file must follow this template:
          ```json
              {

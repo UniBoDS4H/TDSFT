@@ -33,4 +33,5 @@ octave-workspace
 # VSCode workspace files
 .vscode
 
+# Executable files
 app/Mainapp-TDSFT
