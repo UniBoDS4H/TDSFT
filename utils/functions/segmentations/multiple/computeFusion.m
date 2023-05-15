@@ -33,7 +33,7 @@ function resSeg = computeFusion(segmentations, fusionAlgorithm, closeLineAlgorit
 
     % Throw an exception if the number of segmentations is less than 2.
     if length(segmentations) < 2
-        throw(MException('TDSFT:fusionProcess', 'The number of segmentations must be at least 2'));
+        throw(MException("TDSFT:fusionProcess", "The number of segmentations must be at least 2"));
     end
 
     try        
@@ -46,11 +46,16 @@ function resSeg = computeFusion(segmentations, fusionAlgorithm, closeLineAlgorit
 
         % Check if the resulting segmentation is already a close line.
         % If not, use the specified method to close it.
-        segFill = imfill(resSeg, 'holes');
+        segFill = imfill(resSeg, "holes");
         if isequal(segFill, resSeg)
             fun = str2func(closeLineAlgorithm);
             resSeg = fun(resSeg, segmentations);
         end
+
+        % Fill and get the perimeter of the resulting segmentation
+        % to remove not needed internal lines.
+        segFill = imfill(resSeg, "holes");
+        resSeg = bwperim(segFill);
     catch ME
         rethrow(ME);
     end
