@@ -1,4 +1,4 @@
-# TDSFT ![](https://img.shields.io/github/forks/UniBoDS4H/TDSFT?style=social) ![](https://img.shields.io/github/stars/UniBoDS4H/TDSFT?style=social) ![](https://img.shields.io/github/watchers/UniBoDS4H/TDSFTe?style=social) <br>
+# TDSFT ![](https://img.shields.io/github/forks/UniBoDS4H/TDSFT?style=social) ![](https://img.shields.io/github/stars/UniBoDS4H/TDSFT?style=social) ![](https://img.shields.io/github/watchers/UniBoDS4H/TDSFT?style=social) <br>
 
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -8,7 +8,7 @@
 > "TDSFT (Two Dimensional Segmentation Fusion Tool): \
 > an extensible and open-source tool for combining different bidimensional annotations."
 
-<!-- Add resources/logo/logo_blackbg.svg -->
+<!-- Add resources/logo/logo_nobg.svg -->
 
 <img src="app/logo/logo_nobg.svg" width="200">
 
