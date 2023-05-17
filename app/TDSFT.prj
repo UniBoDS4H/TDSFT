@@ -4,16 +4,16 @@
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark>Lorenzo Drudi</param.authnamewatermark>
-    <param.email>lorenzodrudi11@gmail.com - filippo.piccinini@irst.emr.it</param.email>
+    <param.authnamewatermark>Lorenzo Drudi - Filippo Piccinini</param.authnamewatermark>
+    <param.email>lorenzodrudi11@gmail.com - filippo.piccinini85@gmail.com</param.email>
     <param.company>University of Bologna</param.company>
-    <param.summary>Main window of TDSFT tool.</param.summary>
+    <param.summary>Two Dimensional Segmentation Fusion Tool.</param.summary>
     <param.description>An extensible and open-source tool for combining different bidimensional annotations.</param.description>
     <param.screenshot />
     <param.guid />
     <param.installpath.string>/University_of_Bologna/TDSFT/</param.installpath.string>
     <param.installpath.combo>option.installpath.user</param.installpath.combo>
-    <param.logo />
+    <param.logo>${PROJECT_ROOT}/logo/logo_nobg.png</param.logo>
     <param.install.notes />
     <param.target.install.notes>In the following directions, replace MR/R2022b by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
 
@@ -40,11 +40,11 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
     <param.web.mcr>true</param.web.mcr>
     <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
-    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.web.mcr.name>TDSFT_installer_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
     <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
     <param.windows.command.prompt>false</param.windows.command.prompt>
-    <param.create.log>true</param.create.log>
+    <param.create.log>false</param.create.log>
     <param.log.file>log.txt</param.log.file>
     <param.native.matlab>false</param.native.matlab>
     <param.checkbox>false</param.checkbox>
@@ -63,7 +63,6 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
-      <param.logo />
       <param.install.notes />
       <param.intermediate />
       <param.files.only />
@@ -76,10 +75,10 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <param.web.mcr />
       <param.package.mcr />
       <param.no.mcr />
-      <param.web.mcr.name />
       <param.package.mcr.name />
       <param.no.mcr.name />
       <param.windows.command.prompt />
+      <param.create.log />
       <param.native.matlab />
       <param.checkbox />
       <param.example />
@@ -133,6 +132,7 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/data</file>
     </fileset.package>
     <fileset.depfun>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/utils/closeWithInterpolation.m</file>
       <file>${PROJECT_ROOT}/app_about.mlapp</file>
       <file>${PROJECT_ROOT}/app_advancedFeatures.mlapp</file>
       <file>${PROJECT_ROOT}/app_image.mlapp</file>
