@@ -16,5 +16,5 @@
 % DESCRIPTION:
 %   Use the Linear interpolation to close the fusion result.
 function res = closing_Linear(fusionResult, inputSegmentations)
-    res = closeWithInterpolation(fusionResult, inputSegmentations, "linear");
+    res = closingWithInterpolation(fusionResult, inputSegmentations, "linear");
 end

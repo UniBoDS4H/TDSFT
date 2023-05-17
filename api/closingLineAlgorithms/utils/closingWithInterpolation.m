@@ -19,7 +19,7 @@
 % DESCRIPTION:
 %   Convert the coordinates to polar coordinates, sort them by angular position
 %   and use the specified interpolation method to interpolate the missing pixels.
-function res = closeWithInterpolation(fusionResult, inputSegmentations, method)
+function res = closingWithInterpolation(fusionResult, inputSegmentations, method)
     % Get the centroid of the largest segmentation.
     largest = fusion_Largest(inputSegmentations);
     cn = regionprops(largest, "Centroid").Centroid; % centroid

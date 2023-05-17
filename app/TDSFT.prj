@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="4040392620" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3736361275" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
@@ -89,8 +89,10 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
     <fileset.resources>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_ChanVese.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_GeodesicActiveContour.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_Linear.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_NoClosing.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_ShapePreserving.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/utils/closingWithInterpolation.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageSmallestAndLargest.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageTargetFromInput.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageTargetLargest.m</file>
@@ -132,13 +134,13 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/data</file>
     </fileset.package>
     <fileset.depfun>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/utils/closeWithInterpolation.m</file>
       <file>${PROJECT_ROOT}/app_about.mlapp</file>
       <file>${PROJECT_ROOT}/app_advancedFeatures.mlapp</file>
       <file>${PROJECT_ROOT}/app_image.mlapp</file>
       <file>${PROJECT_ROOT}/app_input.mlapp</file>
       <file>${PROJECT_ROOT}/app_result.mlapp</file>
       <file>${PROJECT_ROOT}/logo/logo_nobg.png</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/runStartup.m</file>
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="TDSFT" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_testing/TDSFT</file>

@@ -22,5 +22,5 @@
 %   "Monotone Piecewise Cubic Interpolation",
 %   SIAM Journal on Numerical Analysis. Vol. 17, 1980, pp.238–246.
 function res = closing_ShapePreserving(fusionResult, inputSegmentations)
-    res = closeWithInterpolation(fusionResult, inputSegmentations, "pchip");
+    res = closingWithInterpolation(fusionResult, inputSegmentations, "pchip");
 end
