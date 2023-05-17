@@ -46,7 +46,7 @@ function [W, p, q] = STAPLE(D)
      N = size(D,2); %Number of raters
      
     %% Parameters
-    MAX_ITERATIONS = 30;
+    MAX_ITERATIONS = 100;
     EPSILON = 0.00001; % convergence criterion
     
     % Initial sensitivity and specificity parameter p(j),q(j) for all
