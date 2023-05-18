@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="63014208" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="1085508333" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
