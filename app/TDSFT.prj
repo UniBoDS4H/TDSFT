@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="335703613" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="63014208" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
@@ -102,9 +102,6 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_STAPLE.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_Smallest.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/include/STAPLE.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/componentsOverview.json</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_AverageTargetFromInput.json</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_Middle.json</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/classes/ImagesStoringMethods.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/classes/OnePixelLineTypes.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/getCentroid.m</file>
