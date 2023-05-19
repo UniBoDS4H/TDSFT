@@ -6,16 +6,16 @@
 %   Test class for `StringsUtils`.
 classdef StringsUtilsTest < matlab.unittest.TestCase
     properties (TestParameter)
-        camelCaseAlgorithmName = {"AverageTargetLargest"};
-        algorithmFullName =  {"fusion_AverageTargetLargest"};
-        spacedAlgorithmName = {"Average Target Largest"};
-
-        camelCaseClosingName = {"ChanVese"};
-        closingFullName =  {"closing_ChanVese"};
-        spacedClosingName = {"Chan Vese"};
-
-        fileName = {"fusion_AverageTargetLargest.m"};
-        fileNameWithoutExtension = {"fusion_AverageTargetLargest"};
+        camelCaseAlgorithmName = {"AverageTargetLargest"};          % Camel case algorithm name
+        algorithmFullName =  {"fusion_AverageTargetLargest"};       % Algorithm full name
+        spacedAlgorithmName = {"Average Target Largest"};           % Spaced algorithm name
+            
+        camelCaseClosingName = {"ChanVese"};                        % Camel case closing algorithm name
+        closingFullName =  {"closing_ChanVese"};                    % Closing algorithm full name
+        spacedClosingName = {"Chan Vese"};                          % Spaced closing algorithm name
+            
+        fileName = {"fusion_AverageTargetLargest.m"};               % File name
+        fileNameWithoutExtension = {"fusion_AverageTargetLargest"}; % File name without extension
     end
     
     methods (Test)
