@@ -1,13 +1,13 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="1085508333" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3045747568" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark>Lorenzo Drudi - Filippo Piccinini</param.authnamewatermark>
+    <param.authnamewatermark>Lorenzo Drudi</param.authnamewatermark>
     <param.email>lorenzodrudi11@gmail.com - filippo.piccinini85@gmail.com</param.email>
     <param.company>University of Bologna</param.company>
-    <param.summary>Two Dimensional Segmentation Fusion Tool.</param.summary>
+    <param.summary>Main window of TDSFT tool.</param.summary>
     <param.description>An extensible and open-source tool for combining different bidimensional annotations.</param.description>
     <param.screenshot />
     <param.guid />
@@ -93,6 +93,19 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_NoClosing.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/closing_ShapePreserving.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/closingLineAlgorithms/utils/closingWithInterpolation.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/getCentroid.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/getSegmentMiddlePoint.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/getAverageSegmentation.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/getCommonArea.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/getFilledSegmentations.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/getLargestArea.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/getSegmentationsMask.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/multiple/overlapSegmentations.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/single/getBinaryImageBackground.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/single/getNearestNonZeroPixel.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/single/getOnePixelSegmentation.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/single/imTo8bit.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/functions/segmentations/single/isSegmentationClosed.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageSmallestAndLargest.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageTargetFromInput.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_AverageTargetLargest.m</file>
@@ -102,29 +115,15 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_STAPLE.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_Smallest.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/include/STAPLE.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/classes/ImagesStoringMethods.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/classes/OnePixelLineTypes.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/getCentroid.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/getSegmentMiddlePoint.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/computeFusion.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/getAverageSegmentation.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/getCommonArea.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/getFilledSegmentations.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/getLargestArea.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/getSegmentationsMask.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/multiple/overlapSegmentations.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/getBinaryImageBackground.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/getNearestNonZeroPixel.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/getOnePixelSegmentation.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/imTo8bit.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/isSegmentationClosed.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/segmentations/single/processImage.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/fromCamelCaseToFusionAlgorithmFullName.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/fromCamelCaseToSpacedString.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/fromSpacedToCamelCaseString.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/fromSpacedToClosingAlgorithmFullName.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/fromSpacedToFusionAlgorithmFullName.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/functions/strings/removeFileExtension.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/componentsOverview.json</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_AverageTargetFromInput.json</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_Middle.json</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/controller/Controller.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/controller/ControllerImpl.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/Constants.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/ImagesStoringMethods.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/OnePixelLineTypes.m</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/StringsUtils.m</file>
     </fileset.resources>
     <fileset.package>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api</file>
@@ -139,10 +138,10 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>${PROJECT_ROOT}/logo/logo_nobg.png</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="TDSFT" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_testing/TDSFT</file>
-      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="run_TDSFT.sh" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_testing/run_TDSFT.sh</file>
-      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="readme.txt" optional="true">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_testing/readme.txt</file>
-      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="splash.png" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/app/TDSFT/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="splash.png" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="run_TDSFT.sh" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/run_TDSFT.sh</file>
+      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="readme.txt" optional="true">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/readme.txt</file>
+      <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="TDSFT" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/TDSFT</file>
     </build-deliverables>
     <workflow />
     <matlab>
