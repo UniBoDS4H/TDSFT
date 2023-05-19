@@ -66,12 +66,12 @@ function middleSegmentation = fusion_Middle(segmentations, algorithm)
 
     % If the number of segmentations is even, use the specified algorithm for the last two segmentations left.
     if isequal(nSeg, 2)
-        algorithm = fromSpacedToFusionAlgorithmFullName(algorithm);
-        if strcmp(algorithm, "fusion_Largest")
+        algorithm = StringsUtils.fromSpacedToFusionAlgorithmFullName(algorithm);
+        if strcmp(algorithm, strcat(Constants.ALGORITHM_NAMES_FILE_ROOT, "Largest"))
             middleSegmentation = fusion_Largest(overlap);
-        elseif strcmp(algorithm, "fusion_Smallest")
+        elseif strcmp(algorithm, strcat(Constants.ALGORITHM_NAMES_FILE_ROOT, "Smallest"))
             middleSegmentation = fusion_Smallest(overlapFilled, nSeg);
-        elseif strcmp(algorithm, "fusion_AverageSmallestAndLargest")
+        elseif strcmp(algorithm, strcat(Constants.ALGORITHM_NAMES_FILE_ROOT, "AverageSmallestAndLargest"))
             smallest = fusion_Smallest(overlapFilled, nSeg);
             largest = fusion_Largest(overlap);
             middleSegmentation = fusion_AverageSmallestAndLargest(smallest, largest);

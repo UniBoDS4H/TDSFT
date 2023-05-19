@@ -20,7 +20,7 @@ classdef StringsUtils
         %       fullName of the algorithm.
         %       (e.g. 'fusion_AverageTargetLargest')
         function fullName = fromCamelCaseToFusionAlgorithmFullName(algorithm)
-            fullName = strcat("fusion_", algorithm);
+            fullName = strcat(Constants.ALGORITHM_NAMES_FILE_ROOT, algorithm);
         end
 
         % Convert from camelcase string to spaced string.
@@ -69,7 +69,7 @@ classdef StringsUtils
         %       (e.g. 'closing_ChanVese').
         function result = fromSpacedToClosingAlgorithmFullName(s)
             result = StringsUtils.fromSpacedToCamelCaseString(s);
-            result = strcat("closing_", result);
+            result = strcat(Constants.CLOSING_NAMES_FILE_ROOT, result);
         end
 
         % Get, from a spaced algorithm name, its full name.
