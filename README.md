@@ -10,7 +10,7 @@
 
 <!-- Add resources/logo/logo_nobg.svg -->
 
-<img src="app/logo/logo_nobg.svg" width="200">
+<img src="gui/logo/logo_nobg.svg" width="200">
 
 1. [Description](#description)
 2. [Download](#download)
