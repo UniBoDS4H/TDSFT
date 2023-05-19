@@ -34,4 +34,4 @@ octave-workspace
 .vscode
 
 # Executable files
-app/TDSFT
+gui/TDSFT
