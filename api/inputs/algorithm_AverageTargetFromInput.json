@@ -1,9 +1,0 @@
-{
-    "inputs": [
-        {
-            "name": "Target Segmentation Index",
-            "type": "InputSegmentationsSelector",
-            "help": "The segmentation to be used as the target for the algorithm."
-        }
-    ]
-}

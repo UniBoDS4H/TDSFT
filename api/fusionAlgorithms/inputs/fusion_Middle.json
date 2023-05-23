@@ -1,0 +1,14 @@
+{
+    "inputs": [
+        {
+            "name": "Algorithm",
+            "type": "DropDown",
+            "value": [
+                "Average Smallest And Largest",
+                "Largest",
+                "Smallest"
+            ],
+            "help": "Select the algorithm to use to fuse the last two remaining segmentations. For more details about each algorithm see the documentation."
+        }
+    ]
+}

@@ -32,3 +32,6 @@ octave-workspace
 
 # VSCode workspace files
 .vscode
+
+# Executable files
+gui/TDSFT
