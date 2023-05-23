@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3045747568" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3233189764" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
@@ -8,15 +8,16 @@
     <param.email>lorenzodrudi11@gmail.com - filippo.piccinini85@gmail.com</param.email>
     <param.company>University of Bologna</param.company>
     <param.summary>TDSFT: "Two-Dimensional Segmentation Fusion Tool"</param.summary>
-    <param.description>TDSFT is developed in Matlab (using App Designer).
-It permits to fuse of several 2d segmentation of the same object.
-It offers various algorithms (such as the famous STAPLE algorithm).
-It is user-friendly and extendible, see the docs for more details about how to add your own algorithms!</param.description>
+    <param.description>TDSFT permits to fuse of several two-dimensional segmentation of the same object.
+It is easy easy-to-use and extendable.
+It offers several algorithms for the fusion process such as the famous STAPLE algorithm.
+The killer feature of the tool is its extendability, indeed only a few steps are required for the user to add his own algorithms with a dedicated GUI.
+See the documentation for more details.</param.description>
     <param.screenshot />
     <param.guid />
     <param.installpath.string>/University_of_Bologna/TDSFT/</param.installpath.string>
     <param.installpath.combo>option.installpath.user</param.installpath.combo>
-    <param.logo>${PROJECT_ROOT}/logo/logo_nobg.png</param.logo>
+    <param.logo />
     <param.install.notes />
     <param.target.install.notes>In the following directions, replace MR/R2022b by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
 
@@ -57,12 +58,7 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
 	 
  Input Arguments 
 	 -?  print help on how to use the application 
-	 input arguments 
- Description 
- 	 TDSFT is developed in Matlab (using App Designer).
-It permits to fuse of several 2d segmentation of the same object.
-It offers various algorithms (such as the famous STAPLE algorithm).
-It is user-friendly and extendible, see the docs for more details about how to add your own algorithms!</param.help.text>
+	 input arguments</param.help.text>
     <unset>
       <param.icon />
       <param.icons />
@@ -71,6 +67,7 @@ It is user-friendly and extendible, see the docs for more details about how to a
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
+      <param.logo />
       <param.install.notes />
       <param.intermediate />
       <param.files.only />

@@ -3,8 +3,8 @@
 % NAME:   TDSFT (version 1.0)
 %
 % DESCRIPTION:
-% This function is used to add the folders of the project to the Matlab search path.
-% It is necessary for running the project inside appdesigner.
+%   This function is used to add the folders of the project to the Matlab search path.
+%   It is necessary for running the project inside appdesigner.
 function runStartup() 
     addpath( ...
         ['.' filesep 'utils'], ...
