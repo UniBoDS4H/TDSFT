@@ -24,14 +24,19 @@ classdef ControllerImpl < Controller
                     resultSegmentation = fun(segmentations);
                 end
         
-                % Check if the resulting segmentation is already a close line.
+                % Check if the resulting segmentation is already a close line
+                % (to check this we check that the number of non-zero pixels
+                % of the filled segmentation is at least twice the number of
+                % non-zero pixels of the segmentation).
                 % If not, use the specified method to close it.
                 segFill = imfill(resultSegmentation, "holes");
-                if isequal(segFill, resultSegmentation)
+                nzSegFill = nnz(segFill);
+                nzSeg = nnz(resultSegmentation);
+                if nzSegFill < 2 * nzSeg
                     fun = str2func(closingLineAlgorithm);
                     resultSegmentation = fun(resultSegmentation, segmentations);
                 end
-        
+
                 % Fill and get the perimeter of the resulting segmentation
                 % to remove not needed internal lines.
                 segFill = imfill(resultSegmentation, "holes");
