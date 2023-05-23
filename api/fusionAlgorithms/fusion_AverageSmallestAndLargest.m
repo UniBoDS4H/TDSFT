@@ -1,6 +1,6 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: April 27, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   April 27, 2023
+% NAME:   TDSFT (version 1.0)
 %
 % PARAMETERS:
 %   varargin: The function accepts both 1 or 2 parameters as follows:

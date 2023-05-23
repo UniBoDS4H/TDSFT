@@ -1,6 +1,6 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: April 11, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   April 11, 2023
+% NAME:   TDSFT (version 1.0)
 %
 % PARAMETERS:
 %   - overlap(Matrix: [height, width]:

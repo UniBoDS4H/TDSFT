@@ -1,6 +1,6 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: May 17, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   May 17, 2023
+% NAME:   TDSFT (version 1.0)
 %
 % PARAMETERS:
 %   - fusionResult (Matrix [height, width]):

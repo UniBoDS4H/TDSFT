@@ -1,6 +1,6 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: April 20, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   April 20, 2023
+% NAME:   TDSFT (version 1.0)
 %
 % PARAMETERS:
 %   - points (one-dimensional array of integers pairs, [numPoints, 2]):

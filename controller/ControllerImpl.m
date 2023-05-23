@@ -1,9 +1,8 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: May 19, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   May 19, 2023
+% NAME:   TDSFT (version 1.0)
 %
-% DESCRIPTION:
-%   Implementation of the FusionController interface.
+% Implementation of the FusionController interface.
 classdef ControllerImpl < Controller
     methods
         function resultSegmentation = executeFusion(~, segmentations, fusionAlgorithm, closingLineAlgorithm, varargin)
@@ -24,15 +23,9 @@ classdef ControllerImpl < Controller
                     resultSegmentation = fun(segmentations);
                 end
         
-                % Check if the resulting segmentation is already a close line
-                % (to check this we check that the number of non-zero pixels
-                % of the filled segmentation is at least twice the number of
-                % non-zero pixels of the segmentation).
+                % Check if the resulting segmentation is already a close line.
                 % If not, use the specified method to close it.
-                segFill = imfill(resultSegmentation, "holes");
-                nzSegFill = nnz(segFill);
-                nzSeg = nnz(resultSegmentation);
-                if nzSegFill < 2 * nzSeg
+                if ~isSegmentationClosed(resultSegmentation, true)
                     fun = str2func(closingLineAlgorithm);
                     resultSegmentation = fun(resultSegmentation, segmentations);
                 end

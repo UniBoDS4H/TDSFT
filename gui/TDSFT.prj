@@ -4,11 +4,14 @@
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark>Lorenzo Drudi</param.authnamewatermark>
+    <param.authnamewatermark>Lorenzo Drudi - Filippo Piccinini</param.authnamewatermark>
     <param.email>lorenzodrudi11@gmail.com - filippo.piccinini85@gmail.com</param.email>
     <param.company>University of Bologna</param.company>
-    <param.summary>Main window of TDSFT tool.</param.summary>
-    <param.description>An extensible and open-source tool for combining different bidimensional annotations.</param.description>
+    <param.summary>TDSFT: "Two-Dimensional Segmentation Fusion Tool"</param.summary>
+    <param.description>TDSFT is developed in Matlab (using App Designer).
+It permits to fuse of several 2d segmentation of the same object.
+It offers various algorithms (such as the famous STAPLE algorithm).
+It is user-friendly and extendible, see the docs for more details about how to add your own algorithms!</param.description>
     <param.screenshot />
     <param.guid />
     <param.installpath.string>/University_of_Bologna/TDSFT/</param.installpath.string>
@@ -54,7 +57,12 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
 	 
  Input Arguments 
 	 -?  print help on how to use the application 
-	 input arguments</param.help.text>
+	 input arguments 
+ Description 
+ 	 TDSFT is developed in Matlab (using App Designer).
+It permits to fuse of several 2d segmentation of the same object.
+It offers various algorithms (such as the famous STAPLE algorithm).
+It is user-friendly and extendible, see the docs for more details about how to add your own algorithms!</param.help.text>
     <unset>
       <param.icon />
       <param.icons />

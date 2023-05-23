@@ -1,6 +1,6 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: May 19, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   May 19, 2023
+% NAME:   TDSFT (version 1.0)
 %
 % DESCRIPTION:
 %   Test class for functions operating on single segmentations.

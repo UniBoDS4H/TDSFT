@@ -1,11 +1,10 @@
 % AUTHOR: Lorenzo Drudi (E-mail: lorenzodrudi11@gmail.com)
-% DATE: May 19, 2023
-% NAME: TDSFT (version 1.0)
+% DATE:   May 19, 2023
+% NAME:   TDSFT (version 1.0)
 %
-% DESCRIPTION:
-%   Controller of the fusion process.
-%   It gets the parameters of the fusion process from the gui and
-%   calls the specified algorithm.
+% Controller of the fusion process.
+% It gets the parameters of the fusion process from the gui and
+% calls the specified algorithm.
 classdef Controller
     methods (Abstract)
         % Execute the fusion process.
@@ -33,7 +32,9 @@ classdef Controller
         %       if the number of input segmentations is less than 2.
         resultSegmentation = executeFusion(obj, segmentations, fusionAlgorithm, closingLineAlgorithm, varargin)
 
-        %   Process the image doing the following steps:
+        %   Process the image.
+        % 
+        %   The following steps are performed:
         %   - Convert the image to 8-bit;
         %   - Convert the image to black and white;
         %   - Convert to the required configuration (black background and white segmentation);
