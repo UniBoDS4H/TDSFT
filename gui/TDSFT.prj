@@ -125,6 +125,7 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_Middle.json</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/controller/Controller.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/controller/ControllerImpl.m</file>
+      <file>${PROJECT_ROOT}/logo/icon_nobg.png</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/Constants.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/ImagesStoringMethods.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/utils/OnePixelLineTypes.m</file>
@@ -140,7 +141,6 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>${PROJECT_ROOT}/app_image.mlapp</file>
       <file>${PROJECT_ROOT}/app_input.mlapp</file>
       <file>${PROJECT_ROOT}/app_result.mlapp</file>
-      <file>${PROJECT_ROOT}/logo/logo_nobg.png</file>
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="splash.png" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/splash.png</file>
