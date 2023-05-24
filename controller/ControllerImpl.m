@@ -15,19 +15,19 @@ classdef ControllerImpl < Controller
                 throw(MException("TDSFT:fusionProcess", "The number of segmentations must be at least 2"));
             end
         
-            try        
+            try 
                 fun = str2func(fusionAlgorithm);
-                if nargin > 3
-                    resultSegmentation = fun(segmentations, varargin{:});
+                if nargin > 4
+                    resultSegmentation = feval(fun, segmentations, varargin{:});
                 else
-                    resultSegmentation = fun(segmentations);
+                    resultSegmentation = feval(fun, segmentations);
                 end
-        
+
                 % Check if the resulting segmentation is already a close line.
                 % If not, use the specified method to close it.
                 if ~isSegmentationClosed(resultSegmentation, true)
                     fun = str2func(closingLineAlgorithm);
-                    resultSegmentation = fun(resultSegmentation, segmentations);
+                    resultSegmentation = feval(fun, resultSegmentation, segmentations);
                 end
 
                 % Fill and get the perimeter of the resulting segmentation

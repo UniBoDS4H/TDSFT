@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3233189764" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="2237437547" file="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT.prj" location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui" name="TDSFT" preferred-package-location="/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>TDSFT</param.appname>
     <param.icon />
     <param.icons />
@@ -120,7 +120,6 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_STAPLE.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/fusion_Smallest.m</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/include/STAPLE.m</file>
-      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/componentsOverview.json</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_AverageTargetFromInput.json</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/api/fusionAlgorithms/inputs/fusion_Middle.json</file>
       <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/controller/Controller.m</file>
@@ -141,6 +140,7 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <file>${PROJECT_ROOT}/app_image.mlapp</file>
       <file>${PROJECT_ROOT}/app_input.mlapp</file>
       <file>${PROJECT_ROOT}/app_result.mlapp</file>
+      <file>/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/runStartup.m</file>
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}/TDSFT/for_testing" name="splash.png" optional="false">/home/drudao/Desktop/University/BachelorThesis/Tool/TDSFT/gui/TDSFT/for_testing/splash.png</file>
@@ -162,7 +162,7 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
       <vista>false</vista>
       <linux>true</linux>
       <solaris>false</solaris>
-      <osver>5.19.0-41-generic</osver>
+      <osver>5.19.0-42-generic</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>glnxa64</arch>
