@@ -16,9 +16,9 @@
 %   Return the largest possible area (and its perimeter) as a matrix height * width.
 %   The largest area is the total area covered by the segmentations.
 function [area, perimeter] = getLargestArea(overlappedSegmentations) 
-
-    % Binarize the overlapped segmentations.
-    overlappedSegmentations = imbinarize(overlappedSegmentations);
+    
+    % Binarize the overlapped segmentations.    
+    overlappedSegmentations = uint8( overlappedSegmentations > 0 );
 
     % Fill the resulting segmentation and get the perimeter.
     area = imfill(overlappedSegmentations, "holes");
