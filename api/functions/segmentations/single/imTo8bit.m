@@ -21,17 +21,17 @@ function cImg = imTo8bit(img)
     if isa(img, ImagesStoringMethods.INT_16.string)
         % 16-bit
         if max(img(:)) > 2^12 % 12-bit images are stored as 16-bit
-            cImg  = 255.*double(img)./(2^16-1); 
+            cImg  = uint8( 255.*double(img)./(2^16-1) ); 
         % 12-bit
         else
-            cImg  = 255.*double(img)./(2^12-1); 
+            cImg  = uint8( 255.*double(img)./(2^12-1) ); 
         end
     % 32-bit
     elseif isa(img, ImagesStoringMethods.INT_32.string)
-        cImg  = 255.*double(img)./(2^32-1);
+        cImg  = uint8( 255.*double(img)./(2^32-1) );
     % 64-bit
     elseif isa(img, ImagesStoringMethods.INT_64.string)
-        cImg  = 255.*double(img)./(2^64-1);
+        cImg  = uint8( 255.*double(img)./(2^64-1) );
     else
         cImg = img;
     end
