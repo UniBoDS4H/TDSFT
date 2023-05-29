@@ -29,7 +29,7 @@ function res = closingWithInterpolation(fusionResult, inputSegmentations, method
     [idxy, idxx] = find(fusionResult); % in cart coord
     [idxth, idxr] = cart2pol(idxx-cn(1), idxy-cn(2)); % in polar coord (theta, rho)
 
-    % Sort pixel locations by angular position with reference to largest segmentation center center
+    % Sort pixel locations by angular position with reference to largest segmentation center
     [idxth, sortmap] = sort(idxth, "ascend");
     idxr = idxr(sortmap);
 
@@ -37,8 +37,9 @@ function res = closingWithInterpolation(fusionResult, inputSegmentations, method
     nQueryPoints = 100000;
     newth = linspace(-pi, pi, nQueryPoints).';
 
-    %  Shape-Preserving Piecewise Cubic Hermite interpolation (PCHIP).
-    newr = interp1(idxth, idxr, newth, method);
+    % Use the specified interpolation method to interpolate the missing pixels.
+    % Specify Nan as the value for query points outside the domain.
+    newr = interp1(idxth, idxr, newth, method, NaN);
 
     % Remove NaNs, interpolation method produce NaNs for query points outside the domain.
     nanp = ~isnan(newr);
@@ -48,6 +49,7 @@ function res = closingWithInterpolation(fusionResult, inputSegmentations, method
     % Construct output image.
     [newx, newy] = pol2cart(newth,newr);
     res = false(s);
+
     res(sub2ind(s, round(newy + cn(2)), round(newx + cn(1)))) = true;    
 
     % Fill holes and get the perimeter to remove interior pixels.
