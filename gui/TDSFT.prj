@@ -8,10 +8,7 @@
     <param.email>lorenzodrudi11@gmail.com - filippo.piccinini85@gmail.com</param.email>
     <param.company>University of Bologna</param.company>
     <param.summary>TDSFT: "Two-Dimensional Segmentation Fusion Tool"</param.summary>
-    <param.description>TDSFT permits to fuse of several two-dimensional segmentation of the same object.
-It is easy easy-to-use and extendable.
-It offers several algorithms for the fusion process such as the famous STAPLE algorithm.
-The killer feature of the tool is its extendability, indeed only a few steps are required for the user to add his own algorithms with a dedicated GUI.
+    <param.description>TDSFT is an open-source tool that offers several algorithms (such as the famous STAPLE) to fuse multiple bi-dimensional segmentation.
 See the documentation for more details.</param.description>
     <param.screenshot />
     <param.guid />
@@ -58,7 +55,10 @@ ${LD_LIBRARY_PATH}:MR/R2022b/runtime/glnxa64:MR/R2022b/bin/glnxa64:MR/R2022b/sys
 	 
  Input Arguments 
 	 -?  print help on how to use the application 
-	 input arguments</param.help.text>
+	 input arguments 
+ Description 
+ 	 TDSFT is an open-source tool that offers several algorithms (such as the famous STAPLE) to fuse multiple bi-dimensional segmentation.
+See the documentation for more details.</param.help.text>
     <unset>
       <param.icon />
       <param.icons />
