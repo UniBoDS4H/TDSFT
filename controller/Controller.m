@@ -59,7 +59,7 @@ classdef Controller
         %       the line to use if the segmentation is more than one pixel (external, middle or internal).
         %       (see onePixelLineTypes.m for more details)
         %
-        % Outoput:
+        % Output:
         %   - blackAndWhiteImg (Matrix [height, width]):
         %       original image converted to black and white.
         %   - segmentation (Matrix [height, width]):
