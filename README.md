@@ -8,12 +8,13 @@
 > "TDSFT (Two-Dimensional Segmentation Fusion Tool): \
 > an extensible and open-source tool for combining different bidimensional annotations."
 
-<img src="gui/logo/logo_nobg.svg" width="200">
+<img src="gui/logo/logo_nobg.svg" width="300">
 
 1. [Description](#description)
 2. [Download](#download)
 3. [Documentation](#documentation)
-4. [Contact us](#contact-us)
+4. [License](#license)
+5. [Contact Us](#contact-us)
 
 ## Description ##
 *TDSFT* is an open-source tool developed in MATLAB and also distributed as a Standalone application for `MAC`, `Linux`, and `Windows`, which offers a simple and extensible interface where numerous algorithms are proposed to "*mediate*" (*e.g.*, process and fuse) multiple segmentations.
