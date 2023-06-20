@@ -22,6 +22,6 @@ function bg = getBinaryImageBackground(img)
     firstCol = sum( img(:, 1) );
     lastCol = sum( img(:, w) );
 
-    % Since objects can't touch the border, if they are all 0, the background is white.
+    % Since objects can't touch the border, if they are all 0, the background is black.
     bg = firstRow || lastRow || firstCol || lastCol;
 end

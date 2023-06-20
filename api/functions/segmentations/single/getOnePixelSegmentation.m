@@ -21,11 +21,17 @@ function opSeg = getOnePixelSegmentation(seg, line)
     % Fill the holes.
     segFill = imfill(seg, "holes");
 
+    % If the segmentation is dense, only the external line is allowed.
+    if isequal(seg, segFill) && line ~= "external"
+        throw(MException("TDSFT:processImage", ...
+            "Dense object with line type different from external."));
+    end
+
     % Get the one-pixel segmentation using the specified line type.
     switch line
         case "internal"
-            extSeg = bwperim(segFill);
-            opSeg = bwperim(seg) - extSeg;
+            intArea = segFill - seg;
+            opSeg = bwperim(intArea);
         case "middle"
             opSeg = bwskel(seg);
             opSeg = imfill(opSeg, "holes");
