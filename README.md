@@ -8,7 +8,9 @@
 > "TDSFT (Two-Dimensional Segmentation Fusion Tool): \
 > an extensible and open-source tool for combining different bidimensional annotations."
 
-<img src="gui/logo/logo_nobg.svg" width="300">
+<p align="center">
+  <img src="gui/logo/logo_nobg.svg" width="300">
+</p>
 
 1. [Description](#description)
 2. [Download](#download)
@@ -37,7 +39,7 @@ The following algorithms are implemented:
 For any further information please read the [documentation](#documentation).
 
 ## Download ##
-*TDSFT* is distributed as a Standalone application for `Windows`, `macOS` (only ARM), and `Linux`. You can download it from `github releases` or from the following [link](https://sourceforge.net/p/tdsft/).
+*TDSFT* is distributed as a Standalone application for `Windows`, `macOS` (only ARM-M1), and `Linux`. You can download it from `github releases` or from the following [link](https://sourceforge.net/p/tdsft/).
 
 In addition to the standalone application, <ins>at the link above</ins>, you can find also a useful **video tutorial**.
 
@@ -45,12 +47,12 @@ In addition to the standalone application, <ins>at the link above</ins>, you can
 See the <ins>documentation file</ins> for the details. You can find this by going to `github releases` or to the following [link](https://sourceforge.net/p/tdsft/). Furthermore, the documentation file is inside the root folder of every standalone application.
 
 ## License ##
-See the [license file](LICENSE_GENERAL) for the details. \
+See the [license file](LICENSE_TDSFT) for the details. \
 The [STAPLE implementation](api/fusionAlgorithms/include/STAPLE.m) has its [license file](LICENSE_STAPLE).  
  
 ## Contact Us ##
 - Filippo Piccinini, Istituto Scientifico Romagnolo per lo Studio e la Cura dei Tumori (IRST) IRCCS, Meldola (FC), Italy \
-  email: filippo.piccinini@irst.emr.it
+  email: filippo.piccinini85@gmail.com
 
 - Lorenzo Drudi, Bachelor's Degree Student in Computer Sciences, University of Bologna, Italy \
   email:  &nbsp; lorenzodrudi11@gmail.com \
