@@ -13,4 +13,6 @@ function runStartup()
         ['.' filesep 'gui' filesep 'logo'], ...
         ['.' filesep genpath('api')] ...
     );
+
+    app_main();
 end
